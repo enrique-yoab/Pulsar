@@ -1,0 +1,135 @@
+/* ==========================================================================
+   MODULO: portal.css
+   Sección Portal Privado de Clientes (#portal) en index.html
+   ========================================================================== */
+
+.portal-section {
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--color-border);
+  position: relative;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.portal-card {
+  background-color: var(--color-gray-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all var(--transition-fast);
+}
+
+.portal-card:hover {
+  background-color: #FFFFFF;
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.portal-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.portal-card:hover .portal-icon-box {
+  background: linear-gradient(135deg, var(--color-primary), #004494);
+  color: #FFFFFF;
+}
+
+.portal-card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  line-height: 1.25;
+}
+
+.portal-card-desc {
+  font-size: 0.94rem;
+  color: var(--color-gray);
+  line-height: 1.55;
+}
+
+/* Barra inferior de acceso privado */
+.portal-access-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: linear-gradient(135deg, #F4F8FD 0%, #EAF3FC 100%);
+  border: 1px solid rgba(0, 102, 204, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 28px 36px;
+}
+
+.portal-access-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.portal-lock-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  color: var(--color-primary);
+  border: 1px solid rgba(0, 102, 204, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-subtle);
+}
+
+.portal-access-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 2px;
+}
+
+.portal-access-sub {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+}
+
+/* Responsividad */
+@media (max-width: 900px) {
+  .portal-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .portal-access-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 580px) {
+  .portal-card {
+    padding: 24px 20px;
+  }
+  .portal-access-bar {
+    padding: 22px 18px;
+    gap: 18px;
+  }
+  .portal-access-bar .btn {
+    width: 100%;
+  }
+}

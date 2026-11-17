@@ -1,0 +1,236 @@
+/* ==========================================================================
+   MODULO: about.css
+   Sección "¿Quiénes Somos?" (#nosotros) - Diseño Bento Grid Interactivo
+   ========================================================================== */
+
+.about-section {
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cuadrícula superior principal (Bento Grid) */
+.about-bento {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* Tarjeta principal de historia e identidad */
+.about-story-card {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F4F8FD 100%);
+  border: 1px solid rgba(0, 102, 204, 0.18);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.about-story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.about-story-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 20px;
+}
+
+.badge-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.2);
+}
+
+.about-story-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-dark);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.about-story-title span {
+  color: var(--color-primary);
+}
+
+.about-story-text {
+  font-size: 1.04rem;
+  color: var(--color-gray);
+  line-height: 1.68;
+  margin-bottom: 24px;
+}
+
+/* Cita destacada de los fundadores */
+.about-quote-box {
+  background-color: #FFFFFF;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 20px 24px;
+  box-shadow: var(--shadow-subtle);
+  margin-top: auto;
+}
+
+.about-quote-text {
+  font-size: 0.96rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-dark-secondary);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.about-quote-author {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+}
+
+/* Tarjeta oscura interactiva: Ecosistema de 4 Especialidades */
+.about-ecosystem-card {
+  background: linear-gradient(145deg, #1D1D1F 0%, #28282C 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 38px 34px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-ecosystem-card::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -30%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 136, 255, 0.28) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.eco-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+}
+
+.eco-tag {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #64D2FF;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.eco-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+/* Cuadrícula de las 4 especialidades dentro del ecosistema */
+.eco-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.eco-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all var(--transition-fast);
+}
+
+.eco-item:hover {
+  background: rgba(0, 102, 204, 0.25);
+  border-color: #64D2FF;
+  transform: translateY(-3px);
+}
+
+.eco-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(0, 168, 232, 0.16);
+  color: #64D2FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.eco-item:hover .eco-icon {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.eco-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.eco-sub {
+  font-size: 0.78rem;
+  color: #AEAEB2;
+  line-height: 1.35;
+}
+
+/* Responsividad de Quiénes Somos */
+@media (max-width: 960px) {
+  .about-bento {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .about-story-card {
+    padding: 28px 22px;
+  }
+  .about-story-title {
+    font-size: 1.55rem;
+  }
+  .about-ecosystem-card {
+    padding: 28px 20px;
+  }
+  .eco-grid {
+    grid-template-columns: 1fr;
+  }
+}

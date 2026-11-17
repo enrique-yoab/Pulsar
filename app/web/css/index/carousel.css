@@ -1,0 +1,362 @@
+/* ==========================================================================
+   MODULO: carousel.css
+   Sección Carrusel de Misión, Visión y Valores (#filosofia)
+   ========================================================================== */
+
+.philosophy-section {
+  background: linear-gradient(180deg, #F5F5F7 0%, #EAF2FA 100%);
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+/* Píldoras de selección rápida */
+.carousel-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 44px;
+}
+
+.pill-btn {
+  background-color: #FFFFFF;
+  color: var(--color-dark-secondary);
+  border: 1px solid var(--color-border-dark);
+  padding: 9px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pill-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.pill-btn.active {
+  background: linear-gradient(135deg, var(--color-primary), #0052A3);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(0, 102, 204, 0.3);
+}
+
+/* Contenedor del carrusel */
+.identity-carousel {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.carousel-viewport {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0 28px 0;
+}
+
+/* Pista con apilamiento CSS Grid para altura natural automática */
+.carousel-stage {
+  display: grid;
+  grid-template-areas: "slide";
+  align-items: stretch;
+  justify-items: center;
+  width: 100%;
+  position: relative;
+  perspective: 1200px;
+}
+
+/* Tarjeta individual del carrusel */
+.carousel-slide {
+  grid-area: slide;
+  width: 100%;
+  max-width: 660px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 42px;
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(0) scale(0.78);
+  transition: 
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tarjeta central activa */
+.carousel-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+  border-color: rgba(0, 102, 204, 0.28);
+  box-shadow: 0 20px 50px rgba(0, 35, 80, 0.12);
+  z-index: 4;
+}
+
+/* Tarjeta previa (izquierda) */
+.carousel-slide.is-prev {
+  opacity: 0.42;
+  pointer-events: auto;
+  cursor: pointer;
+  transform: translateX(-38%) scale(0.86);
+  z-index: 2;
+  user-select: none;
+}
+
+.carousel-slide.is-prev:hover {
+  opacity: 0.62;
+  border-color: var(--color-primary);
+}
+
+/* Tarjeta siguiente (derecha) */
+.carousel-slide.is-next {
+  opacity: 0.42;
+  pointer-events: auto;
+  cursor: pointer;
+  transform: translateX(38%) scale(0.86);
+  z-index: 2;
+  user-select: none;
+}
+
+.carousel-slide.is-next:hover {
+  opacity: 0.62;
+  border-color: var(--color-primary);
+}
+
+/* Encabezado interno de cada tarjeta */
+.slide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.slide-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0077ED 0%, #004494 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.28);
+  flex-shrink: 0;
+}
+
+.slide-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.slide-badge {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+}
+
+.slide-counter {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--color-gray);
+  letter-spacing: 0.05em;
+}
+
+.slide-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--color-dark);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.slide-lead {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.slide-desc {
+  font-size: 1rem;
+  color: var(--color-gray);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.slide-points {
+  margin-top: auto;
+  border-top: 1px solid var(--color-border);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slide-points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--color-dark-secondary);
+}
+
+.slide-points li svg {
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+/* Flechas laterales de navegación */
+.carousel-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-dark);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel-nav-arrow:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-nav-arrow.prev {
+  left: 0;
+}
+
+.carousel-nav-arrow.next {
+  right: 0;
+}
+
+/* Barra inferior de controles e indicadores */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border-dark);
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ctrl-btn:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+}
+
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background-color: var(--color-border-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel-dots .dot.active {
+  width: 26px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+}
+
+@media (max-width: 960px) {
+  .carousel-slide.is-prev {
+    transform: translateX(-22%) scale(0.88);
+    opacity: 0.25;
+  }
+  .carousel-slide.is-next {
+    transform: translateX(22%) scale(0.88);
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-nav-arrow {
+    display: none;
+  }
+  .carousel-slide.is-prev,
+  .carousel-slide.is-next {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .carousel-slide {
+    padding: 28px 22px;
+  }
+  .slide-title {
+    font-size: 1.75rem;
+  }
+  .carousel-controls {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .slide-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .slide-meta {
+    align-items: flex-start;
+  }
+  .ctrl-btn span {
+    display: none;
+  }
+}

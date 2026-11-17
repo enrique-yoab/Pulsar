@@ -1,0 +1,171 @@
+/* ==========================================================================
+   MODULO: quote-cta.css
+   Sección final de Cotización (#contacto) - Limpia, directa y sin sobrecarga
+   ========================================================================== */
+
+.quote-cta-section {
+  background: linear-gradient(180deg, #F5F5F7 0%, #E7F0FA 100%);
+  border-top: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-banner-card {
+  max-width: 880px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #1D1D1F 0%, #26262B 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: 0 22px 50px rgba(0, 20, 50, 0.14);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+/* Destello decorativo de fondo */
+.quote-banner-card::before {
+  content: '';
+  position: absolute;
+  top: -45%;
+  right: -15%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(0, 119, 237, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.quote-banner-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.quote-zero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(52, 199, 89, 0.16);
+  border: 1px solid rgba(52, 199, 89, 0.4);
+  color: #6CE88D;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+}
+
+.zero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #34C759;
+  box-shadow: 0 0 8px #34C759;
+}
+
+.quote-banner-title {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+.quote-banner-title span {
+  color: #64D2FF;
+}
+
+/* Nota concisa de precio relativo */
+.quote-disclaimer {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  max-width: 680px;
+  text-align: left;
+}
+
+.quote-disclaimer svg {
+  color: #FFD60A;
+  flex-shrink: 0;
+}
+
+.quote-disclaimer p {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #E5E5EA;
+}
+
+.quote-disclaimer strong {
+  color: #FFFFFF;
+}
+
+/* Acción principal */
+.quote-cta-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn-quote-start {
+  background: linear-gradient(135deg, #0077ED 0%, #00A8E8 100%);
+  color: #FFFFFF;
+  padding: 15px 34px;
+  font-size: 1.02rem;
+  box-shadow: 0 8px 24px rgba(0, 119, 237, 0.4);
+}
+
+.btn-quote-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 168, 232, 0.5);
+}
+
+.quote-no-commitment {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #AEAEB2;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .quote-banner-card {
+    padding: 36px 24px;
+  }
+  .quote-banner-title {
+    font-size: 1.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-banner-card {
+    padding: 30px 18px;
+    gap: 20px;
+  }
+  .quote-banner-title {
+    font-size: 1.45rem;
+  }
+  .quote-disclaimer {
+    align-items: flex-start;
+    padding: 12px 14px;
+  }
+  .btn-quote-start {
+    width: 100%;
+  }
+}

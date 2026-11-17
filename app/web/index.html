@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pulsar Technologies - Soluciones de ingeniería para PyMEs: Redes, CCTV, Soporte Técnico y Desarrollo Web.">
+  <meta name="theme-color" content="#0066CC">
+  <title>Pulsar Technologies | Ingeniería y Soluciones TI</title>
+
+  <!-- Tipografía Lato (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo modulares (Globales y específicas de Index) -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/index/hero.css">
+  <link rel="stylesheet" href="css/index/about.css">
+  <link rel="stylesheet" href="css/index/carousel.css">
+  <link rel="stylesheet" href="css/index/services.css">
+  <link rel="stylesheet" href="css/index/quote-cta.css">
+  <link rel="stylesheet" href="css/index/portal.css">
+  <link rel="stylesheet" href="css/footer.css">
+  
+  <!-- Scripts modulares (Global y específicos de Index) -->
+  <script src="js/main.js" defer></script>
+  <script src="js/index/hero-canvas.js" defer></script>
+  <script src="js/index/carousel.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================================
+       HEADER / BARRA DE NAVEGACIÓN
+       ====================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <!-- Logotipo e Identidad -->
+      <a href="#inicio" class="brand" aria-label="Pulsar Technologies - Inicio">
+        <div class="brand-icon">
+          <!-- Icono de pulso tecnológico -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">PULSAR</span>
+          <span class="brand-subtitle">TECHNOLOGIES</span>
+        </div>
+      </a>
+
+      <!-- Menú de Navegación -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#filosofia" class="nav-link">Valores</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#contacto" class="nav-link">Cotizar</a>
+        <a href="#portal" class="nav-link">Portal</a>
+      </nav>
+
+      <!-- Acciones de Navegación -->
+      <div class="nav-actions">
+        <a href="#login" class="btn btn-primary nav-cta-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Iniciar Sesión</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MAIN / CONTENIDO PRINCIPAL
+       ====================================================================== -->
+  <main id="inicio">
+    <!-- 1. HERO CON LOGO PROTAGONISTA Y FONDO ANIMADO -->
+    <section class="hero-section">
+      <!-- Fondo animado multicapa: Orbes de luz + Red interactiva en Canvas -->
+      <div class="hero-bg-layers" aria-hidden="true">
+        <div class="bg-orb orb-1"></div>
+        <div class="bg-orb orb-2"></div>
+        <div class="bg-orb orb-3"></div>
+        <div class="bg-grid-overlay"></div>
+        <canvas id="pulsarCanvas" class="hero-canvas"></canvas>
+      </div>
+
+      <div class="container hero-content">
+        <!-- Emblema Central Animado de Pulsar Technologies -->
+        <div class="hero-logo-showcase">
+          <div class="pulsar-rings" aria-hidden="true">
+            <span class="ring ring-1"></span>
+            <span class="ring ring-2"></span>
+            <span class="ring ring-3"></span>
+          </div>
+          <div class="hero-logo-emblem">
+            <svg class="pulse-svg" width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Trazo base tenue permanente -->
+              <polyline class="pulse-track" pathLength="100" points="22 12 18 12 15 21 9 3 6 12 2 12" fill="none" stroke="rgba(255, 255, 255, 0.25)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              <!-- Pulso luminoso animado sin filtros que generen fondo blanco -->
+              <polyline class="pulse-path" pathLength="100" points="22 12 18 12 15 21 9 3 6 12 2 12" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Título Principal de la Empresa -->
+        <h1 class="hero-company-name">
+          <span class="company-word-main">PULSAR</span>
+          <span class="company-word-sub">TECHNOLOGIES</span>
+        </h1>
+
+        <p class="hero-tagline">
+          Ingeniería que impulsa tu negocio.
+        </p>
+        
+        <p class="hero-subtitle">
+          Tu departamento externo de TI: redes de alta disponibilidad, videovigilancia, soporte técnico y software a medida.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary">Cotizar Proyecto</a>
+          <a href="#nosotros" class="btn btn-secondary">Quiénes Somos</a>
+        </div>
+
+        <!-- Métricas clave -->
+        <div class="hero-stats reveal-item">
+          <div class="stat-item">
+            <div class="stat-value">4</div>
+            <div class="stat-label">Especialidades</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Transparencia</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">&lt; 24h</div>
+            <div class="stat-label">Tiempo de Respuesta</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">7 Días</div>
+            <div class="stat-label">Vigencia Garantizada</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. SECCIÓN QUIÉNES SOMOS (#nosotros)
+         ====================================================================== -->
+    <section class="section about-section" id="nosotros">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <span class="section-tag">Quiénes Somos</span>
+          <h2 class="section-title">Tu Aliado de Ingeniería</h2>
+          <p class="section-description">
+            Transformamos y protegemos la operación tecnológica de las PyMEs en México.
+          </p>
+        </div>
+
+        <!-- Bento Grid Principal -->
+        <div class="about-bento">
+          <!-- Tarjeta de Identidad e Historia -->
+          <article class="about-story-card reveal-item">
+            <div>
+              <div class="about-story-badge">
+                <span class="badge-pulse-dot"></span>
+                <span>ADN Pulsar</span>
+              </div>
+              <h3 class="about-story-title">
+                Tu Departamento Externo de <span>Ingeniería de Software</span>
+              </h3>
+              <p class="about-story-text">
+                <strong>Pulsar Technologies</strong> es una empresa mexicana de base tecnológica creada para brindar estabilidad, seguridad y continuidad operativa a micro, pequeñas y medianas empresas. Integramos hardware y software bajo estándares internacionales sin sobrecostos ni tecnicismos confusos.
+              </p>
+            </div>
+
+            <blockquote class="about-quote-box">
+              <p class="about-quote-text">
+                “Detrás de cada red, cada cámara y cada aplicación, hay un negocio mexicano buscando tranquilidad para operar y crecer. Hacemos que lo complejo se vuelva simple y confiable.”
+              </p>
+              <footer class="about-quote-author">— Mensaje de los Fundadores</footer>
+            </blockquote>
+          </article>
+
+          <!-- Tarjeta Interactiva del Ecosistema de 4 Especialidades -->
+          <aside class="about-ecosystem-card reveal-item">
+            <div class="eco-header">
+              <span class="eco-tag">Cobertura Integral</span>
+              <h3 class="eco-title">Cuatro Áreas en un Solo Equipo</h3>
+            </div>
+
+            <div class="eco-grid">
+              <!-- Área 1 -->
+              <div class="eco-item">
+                <div class="eco-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                </div>
+                <div class="eco-name">Conectividad</div>
+                <div class="eco-sub">Cableado estructurado y redes LAN/WLAN</div>
+              </div>
+
+              <!-- Área 2 -->
+              <div class="eco-item">
+                <div class="eco-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="eco-name">Seguridad CCTV</div>
+                <div class="eco-sub">Videovigilancia IP HD y monitoreo remoto</div>
+              </div>
+
+              <!-- Área 3 -->
+              <div class="eco-item">
+                <div class="eco-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                  </svg>
+                </div>
+                <div class="eco-name">Soporte Técnico</div>
+                <div class="eco-sub">Mantenimiento preventivo y correctivo</div>
+              </div>
+
+              <!-- Área 4 -->
+              <div class="eco-item">
+                <div class="eco-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div class="eco-name">Software y Web</div>
+                <div class="eco-sub">Portales corporativos y sistemas de gestión</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. SECCIÓN CARRUSEL: MISIÓN, VISIÓN Y VALORES (#filosofia)
+         ====================================================================== -->
+    <section class="section philosophy-section" id="filosofia">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <span class="section-tag">Identidad Pulsar</span>
+          <h2 class="section-title">Misión, Visión y Valores</h2>
+          <p class="section-description">
+            Explora los principios que guían cada proyecto de nuestra ingeniería.
+          </p>
+        </div>
+
+        <!-- Selector rápido de conceptos -->
+        <div class="carousel-pills reveal-item" id="carouselPills" role="tablist" aria-label="Pilares de identidad corporativa">
+          <button type="button" class="pill-btn active" data-index="0" role="tab" aria-selected="true">Misión</button>
+          <button type="button" class="pill-btn" data-index="1" role="tab" aria-selected="false">Visión</button>
+          <button type="button" class="pill-btn" data-index="2" role="tab" aria-selected="false">Honestidad</button>
+          <button type="button" class="pill-btn" data-index="3" role="tab" aria-selected="false">Empatía</button>
+          <button type="button" class="pill-btn" data-index="4" role="tab" aria-selected="false">Simplicidad</button>
+          <button type="button" class="pill-btn" data-index="5" role="tab" aria-selected="false">Confiabilidad</button>
+          <button type="button" class="pill-btn" data-index="6" role="tab" aria-selected="false">Compromiso</button>
+        </div>
+
+        <!-- Escenario del Carrusel -->
+        <div class="identity-carousel reveal-item" id="identityCarousel">
+          <div class="carousel-viewport" id="carouselViewport">
+            <!-- Botón lateral izquierdo -->
+            <button type="button" class="carousel-nav-arrow prev" id="carouselPrevArrow" aria-label="Concepto anterior">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <!-- Pista de tarjetas del carrusel -->
+            <div class="carousel-stage" id="carouselStage">
+              <!-- Slide 0: Misión -->
+              <article class="carousel-slide is-active" data-index="0">
+                <div class="slide-header">
+                  <div class="slide-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <circle cx="12" cy="12" r="6"></circle>
+                      <circle cx="12" cy="12" r="2"></circle>
+                    </svg>
+                  </div>
+                  <div class="slide-meta">
+                    <span class="slide-badge">Propósito Corporativo</span>
+                    <span class="slide-counter">01 / 07</span>
+                  </div>
+                </div>
+                <h3 class="slide-title">Misión</h3>
+                <p class="slide-lead">Ingeniería cercana que impulsa tu tranquilidad operativa.</p>
+                <p class="slide-desc">
+                  Proveer un equipo de ingeniería responsable, honesto y cercano que entregue soluciones tecnológicas simples, rápidas y eficientes, permitiendo que nuestros clientes se enfoquen en hacer crecer su negocio con una infraestructura robusta y de vanguardia.
+                </p>
+                <ul class="slide-points">
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Soluciones simples, rápidas y eficientes</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Infraestructura robusta y de vanguardia</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Impulso al crecimiento sostenible de las PyMEs</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Slide 1: Visión -->
+              <article class="carousel-slide is-next" data-index="1">
+                <div class="slide-header">
+                  <div class="slide-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="slide-meta">
+                    <span class="slide-badge">Horizonte Estratégico</span>
+                    <span class="slide-counter">02 / 07</span>
+                  </div>
+                </div>
+                <h3 class="slide-title">Visión</h3>
+                <p class="slide-lead">Igualdad tecnológica para las empresas mexicanas.</p>
+                <p class="slide-desc">
+                  Consolidar a Pulsar Technologies como el núcleo técnico de confianza y la primera opción de servicios de TI en México, logrando que las micro, pequeñas y medianas empresas compitan en equidad tecnológica frente a los grandes corporativos.
+                </p>
+                <ul class="slide-points">
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Estándares de ingeniería de nivel corporativo</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Equidad competitiva para negocios en México</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>El aliado técnico de cabecera y confianza</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Slide 2: Honestidad -->
+              <article class="carousel-slide" data-index="2">
+                <div class="slide-header">
+                  <div class="slide-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      <polyline points="9 12 11 14 15 10"></polyline>
+                    </svg>
+                  </div>
+                  <div class="slide-meta">
+                    <span class="slide-badge">Valor Fundamental 01</span>
+                    <span class="slide-counter">03 / 07</span>
+                  </div>
+                </div>
+                <h3 class="slide-title">Honestidad</h3>
+                <p class="slide-lead">Transparencia diagnóstica y comercial.</p>
+                <p class="slide-desc">
+                  Actuamos con rectitud absoluta en cada diagnóstico, recomendación de hardware y cotización. No vendemos lo que el cliente no necesita y respaldamos la calidad de nuestras implementaciones desde el primer cable hasta el código final.
+                </p>
+                <ul class="slide-points">
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Cotizaciones claras sin costos ocultos</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Recomendación justa de equipamiento real</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Responsabilidad total sobre cada entrega</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Slide 3: Empatía -->
+              <article class="carousel-slide" data-index="3">
+                <div class="slide-header">
+                  <div class="slide-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <div class="slide-meta">
+                    <span class="slide-badge">Valor Fundamental 02</span>
+                    <span class="slide-counter">04 / 07</span>
+                  </div>
+                </div>
+                <h3 class="slide-title">Empatía</h3>
+                <p class="slide-lead">Cercanía humana y lenguaje accesible.</p>
+                <p class="slide-desc">
+                  Entendemos que detrás de una falla técnica existe estrés operativo para el negocio. Escuchamos activamente, respondemos con prontitud y traducimos conceptos complejos de ingeniería a un lenguaje claro que dé certidumbre.
+                </p>
+                <ul class="slide-points">
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Comunicación directa sin tecnicismos confusos</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Atención rápida ante urgencias operativas</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Trato cercano y humano en cada proyecto</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Slide 4: Simplicidad -->
+              <article class="carousel-slide" data-index="4">
+                <div class="slide-header">
+                  <div class="slide-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                  </div>
+                  <div class="slide-meta">
+                    <span class="slide-badge">Valor Fundamental 03</span>
+                    <span class="slide-counter">05 / 07</span>
+                  </div>
+                </div>
+                <h3 class="slide-title">Simplicidad</h3>
+                <p class="slide-lead">Sistemas intuitivos y libres de fricción.</p>
+                <p class="slide-desc">
+                  La mejor tecnología es aquella que funciona de manera transparente, intuitiva y fluida. Diseñamos arquitecturas de software y topologías de red limpias, eliminando burocracia técnica y configuraciones innecesarias.
+                </p>
+                <ul class="slide-points">
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Redes e interfaces limpias y ordenadas</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Fácil operación desde el primer día</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Soluciones directas libres de fricción</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Slide 5: Confiabilidad -->
+              <article class="carousel-slide" data-index="5">
+                <div class="slide-header">
+                  <div class="slide-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                  <div class="slide-meta">
+                    <span class="slide-badge">Valor Fundamental 04</span>
+                    <span class="slide-counter">06 / 07</span>
+                  </div>
+                </div>
+                <h3 class="slide-title">Confiabilidad</h3>
+                <p class="slide-lead">Estabilidad y disponibilidad continua.</p>
+                <p class="slide-desc">
+                  Construimos cimientos tecnológicos seguros en los cuales el cliente puede respaldar su operación diaria sin temor a interrupciones. Empleamos componentes duraderos y garantizamos la integridad de sus redes y sistemas.
+                </p>
+                <ul class="slide-points">
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Componentes de hardware probados y duraderos</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Resguardo íntegro de datos y videovigilancia</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Alta disponibilidad operativa para tu negocio</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Slide 6: Compromiso -->
+              <article class="carousel-slide is-prev" data-index="6">
+                <div class="slide-header">
+                  <div class="slide-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="8" r="7"></circle>
+                      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                  </div>
+                  <div class="slide-meta">
+                    <span class="slide-badge">Valor Fundamental 05</span>
+                    <span class="slide-counter">07 / 07</span>
+                  </div>
+                </div>
+                <h3 class="slide-title">Compromiso</h3>
+                <p class="slide-lead">Rigor profesional en tiempo y forma.</p>
+                <p class="slide-desc">
+                  Actuamos con congruencia profesional y formalidad contractual en cada proyecto adquirido. Respetamos las fechas de entrega pactadas, cumplimos los acuerdos de nivel de servicio (SLA) y acompañamos tu continuidad operativa.
+                </p>
+                <ul class="slide-points">
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Cumplimiento puntual de fechas de entrega</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Acuerdos de nivel de servicio (SLA) claros</span>
+                  </li>
+                  <li>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Seguimiento y garantía post-implementación</span>
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Botón lateral derecho -->
+            <button type="button" class="carousel-nav-arrow next" id="carouselNextArrow" aria-label="Siguiente concepto">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Barra inferior de indicadores y botones -->
+          <div class="carousel-controls">
+            <button type="button" class="ctrl-btn" id="prevCarouselBtn" aria-label="Concepto anterior">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              <span>Anterior</span>
+            </button>
+
+            <div class="carousel-dots" id="carouselDots">
+              <button type="button" class="dot active" data-index="0" aria-label="Ir a Misión"></button>
+              <button type="button" class="dot" data-index="1" aria-label="Ir a Visión"></button>
+              <button type="button" class="dot" data-index="2" aria-label="Ir a Honestidad"></button>
+              <button type="button" class="dot" data-index="3" aria-label="Ir a Empatía"></button>
+              <button type="button" class="dot" data-index="4" aria-label="Ir a Simplicidad"></button>
+              <button type="button" class="dot" data-index="5" aria-label="Ir a Confiabilidad"></button>
+              <button type="button" class="dot" data-index="6" aria-label="Ir a Compromiso"></button>
+            </div>
+
+            <button type="button" class="ctrl-btn" id="nextCarouselBtn" aria-label="Siguiente concepto">
+              <span>Siguiente</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. SECCIÓN LOS 4 SERVICIOS (#servicios)
+         ====================================================================== -->
+    <section class="section services-section" id="servicios">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <span class="section-tag">Nuestros Servicios</span>
+          <h2 class="section-title">Pilares de Operación</h2>
+          <p class="section-description">
+            Cada especialidad cubre un eslabón crítico para garantizar que tu infraestructura funcione de principio a fin sin interrupciones.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Servicio 1: Infraestructura de Conectividad -->
+          <article class="service-card reveal-item">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <span class="service-step-tag">01 · Conectividad</span>
+            </div>
+
+            <h3 class="service-title">Redes y Cableado Estructurado</h3>
+            <p class="service-desc">
+              Construimos la base física de comunicación de tu empresa mediante canalización normativa y redes locales (LAN/WLAN) de alta disponibilidad, enrutamiento y conmutación.
+            </p>
+
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Cableado estructurado (Cat 5e en adelante)</span>
+              </li>
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Cobertura WiFi empresarial (access points)</span>
+              </li>
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Racks organizados, switches y segmentación VLAN</span>
+              </li>
+            </ul>
+
+            <div class="service-guarantee">
+              <span class="guarantee-label">Garantía Operativa</span>
+              <span class="guarantee-value">Enlace estable y certificado</span>
+            </div>
+          </article>
+
+          <!-- Servicio 2: Seguridad Perimetral y Videovigilancia -->
+          <article class="service-card reveal-item">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                  <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+              </div>
+              <span class="service-step-tag">02 · Seguridad</span>
+            </div>
+
+            <h3 class="service-title">Videovigilancia y CCTV</h3>
+            <p class="service-desc">
+              Protegemos tus instalaciones con sistemas de videovigilancia IP y análoga en alta definición, almacenamiento local cifrado y visualización remota en tiempo real.
+            </p>
+
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Cámaras IP/HD con visión nocturna e intemperie</span>
+              </li>
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Grabadores NVR/DVR con resguardo local seguro</span>
+              </li>
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Acceso remoto cifrado desde dispositivos móviles</span>
+              </li>
+            </ul>
+
+            <div class="service-guarantee">
+              <span class="guarantee-label">Garantía Operativa</span>
+              <span class="guarantee-value">Privacidad 100% local</span>
+            </div>
+          </article>
+
+          <!-- Servicio 3: Soporte Técnico y Continuidad -->
+          <article class="service-card reveal-item">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <span class="service-step-tag">03 · Continuidad</span>
+            </div>
+
+            <h3 class="service-title">Soporte Técnico y Mantenimiento</h3>
+            <p class="service-desc">
+              Aseguramos que tus estaciones de trabajo, servidores y periféricos operen sin paros mediante mantenimiento preventivo, correctivo y mesa de ayuda directa.
+            </p>
+
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Diagnóstico, limpieza física y optimización</span>
+              </li>
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Asistencia técnica remota y visitas en sitio</span>
+              </li>
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Seguimiento puntual de tickets e incidentes</span>
+              </li>
+            </ul>
+
+            <div class="service-guarantee">
+              <span class="guarantee-label">Garantía Operativa</span>
+              <span class="guarantee-value">Respuesta ágil ante fallas</span>
+            </div>
+          </article>
+
+          <!-- Servicio 4: Desarrollo de Software y Plataformas Web -->
+          <article class="service-card reveal-item">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <span class="service-step-tag">04 · Digitalización</span>
+            </div>
+
+            <h3 class="service-title">Desarrollo Web y Sistemas</h3>
+            <p class="service-desc">
+              Modernizamos la presencia digital y el control administrativo de tu negocio con sitios corporativos responsivos, catálogos interactivos y sistemas de gestión.
+            </p>
+
+            <ul class="service-features">
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Portales web rápidos, seguros y adaptables</span>
+              </li>
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Catálogos digitales y cotizadores en línea</span>
+              </li>
+              <li class="service-feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Plataformas de gestión en Python y FastAPI</span>
+              </li>
+            </ul>
+
+            <div class="service-guarantee">
+              <span class="guarantee-label">Garantía Operativa</span>
+              <span class="guarantee-value">Carga ligera y alta disponibilidad</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. SECCIÓN FINAL: COTIZACIÓN (#contacto)
+         ====================================================================== -->
+    <section class="section quote-cta-section" id="contacto">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <span class="section-tag">Herramienta Empresarial</span>
+          <h2 class="section-title">Cotización</h2>
+          <p class="section-description">
+            No pierdas tu tiempo, puedes cotizar el servicio ofrecido sin costo. Consideramos que tu tiempo es importante, por lo que te brindamos esta herramienta empresarial para ofrecerte el mejor servicio y la transparencia necesaria para que decidas de manera inteligente y rápida.
+          </p>
+        </div>
+
+        <div class="quote-banner-card reveal-item">
+          <div class="quote-banner-top">
+            <div class="quote-zero-badge">
+              <span class="zero-dot" aria-hidden="true"></span>
+              <span>$0 Costo · Sin Compromiso</span>
+            </div>
+            <h3 class="quote-banner-title">
+              Calcula tu Presupuesto <span>Estimado</span>
+            </h3>
+          </div>
+
+          <div class="quote-cta-actions">
+            <a href="cotizador.html" class="btn btn-quote-start">
+              <span>Cotizar Gratis</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <span class="quote-no-commitment">Sin costo y sin compromiso</span>
+          </div>
+
+          <div class="quote-disclaimer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <p>
+              <strong>Estimación relativa:</strong> El costo calculado es aproximado, ya que los precios y modelos de los equipos cambian constantemente en el mercado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. SECCIÓN PORTAL DE CLIENTES (#portal)
+         ====================================================================== -->
+    <section class="section portal-section" id="portal">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <span class="section-tag">Clientes Activos</span>
+          <h2 class="section-title">Portal de Clientes</h2>
+          <p class="section-description">
+            Si ya operamos tu infraestructura de red o servicio web, ingresa de forma privada para dar seguimiento a tu servicio.
+          </p>
+        </div>
+
+        <div class="portal-grid">
+          <!-- Tarjeta 1: Estado de Red -->
+          <article class="portal-card reveal-item">
+            <div class="portal-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="portal-card-title">Estado de tu Red</h3>
+            <p class="portal-card-desc">
+              Revisa de manera privada el estatus operativo de la infraestructura instalada y los equipos asignados a tu empresa.
+            </p>
+          </article>
+
+          <!-- Tarjeta 2: Reportes de Inconvenientes -->
+          <article class="portal-card reveal-item">
+            <div class="portal-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <h3 class="portal-card-title">Reportar Inconveniente</h3>
+            <p class="portal-card-desc">
+              Genera reportes ante cualquier falla técnica para activar atención rápida y dar seguimiento puntual a cada ticket.
+            </p>
+          </article>
+
+          <!-- Tarjeta 3: Solicitudes de Cambio -->
+          <article class="portal-card reveal-item">
+            <div class="portal-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+            </div>
+            <h3 class="portal-card-title">Solicitudes de Cambio</h3>
+            <p class="portal-card-desc">
+              Solicita ajustes, ampliaciones o mejoras sobre tu red corporativa o plataforma web directamente desde tu cuenta.
+            </p>
+          </article>
+        </div>
+
+        <!-- Barra de acceso al Portal -->
+        <div class="portal-access-bar reveal-item">
+          <div class="portal-access-info">
+            <div class="portal-lock-badge" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="portal-access-title">Acceso Exclusivo para Clientes</h4>
+              <p class="portal-access-sub">Ingresa con tus credenciales para consultar tu servicio.</p>
+            </div>
+          </div>
+
+          <a href="#login" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Iniciar Sesión</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER INSTITUCIONAL
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Marca y descripción corporativa -->
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">PULSAR</span>
+              <span class="brand-subtitle">TECHNOLOGIES</span>
+            </div>
+          </div>
+          <p>
+            Ingeniería y tecnología para PyMEs mexicanas. Redes, videovigilancia, soporte técnico y plataformas web.
+          </p>
+        </div>
+
+        <!-- Enlaces a Especialidades -->
+        <div class="footer-col">
+          <h4 class="footer-title">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="#servicios">Redes y Conectividad</a></li>
+            <li><a href="#servicios">Seguridad y CCTV</a></li>
+            <li><a href="#servicios">Soporte Técnico</a></li>
+            <li><a href="#servicios">Desarrollo Web</a></li>
+          </ul>
+        </div>
+
+        <!-- Enlaces Institucionales -->
+        <div class="footer-col">
+          <h4 class="footer-title">Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="#nosotros">Quiénes Somos</a></li>
+            <li><a href="#filosofia">Misión y Valores</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Cotizar Gratis</a></li>
+            <li><a href="#portal">Portal de Clientes</a></li>
+          </ul>
+        </div>
+
+        <!-- Marco Legal y Cumplimiento -->
+        <div class="footer-col">
+          <h4 class="footer-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Sociedad S.A.S.</a></li>
+            <li><a href="#">Aviso de Privacidad</a></li>
+            <li><a href="#">Términos LFPC</a></li>
+            <li><a href="#">Derechos ARCO</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pie legal y derechos -->
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Pulsar Technologies S.A.S. Todos los derechos reservados.</p>
+        <div class="footer-legal-tags">
+          <span>Negocios Web</span>
+          <span class="dot-sep" aria-hidden="true">•</span>
+          <span>Facultad de Ingeniería, UNAM</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
