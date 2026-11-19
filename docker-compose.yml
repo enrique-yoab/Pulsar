@@ -1,0 +1,26 @@
+services:
+  api:
+    build: ./app/api
+    container_name: Pulsar-API
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./app/api:/app/api:ro
+      - ./BD:/app/BD
+    restart: unless-stopped
+
+  pulsar:
+    image: httpd:2.4-alpine
+    container_name: Pulsar
+    depends_on:
+      - api
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./app/web:/usr/local/apache2/htdocs/:ro
+      - ./app/apache/pulsar-proxy.conf:/usr/local/apache2/conf/extra/pulsar-proxy.conf:ro
+    command: >
+      sh -c "grep -q pulsar-proxy /usr/local/apache2/conf/httpd.conf ||
+      printf '\nLoadModule proxy_module modules/mod_proxy.so\nLoadModule proxy_http_module modules/mod_proxy_http.so\nInclude conf/extra/pulsar-proxy.conf\n'
+      >> /usr/local/apache2/conf/httpd.conf; exec httpd-foreground"
+    restart: unless-stopped

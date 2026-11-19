@@ -4,7 +4,7 @@
    ========================================================================== */
 
 .philosophy-section {
-  background: linear-gradient(180deg, #F5F5F7 0%, #EAF2FA 100%);
+  background-color: var(--color-bg-dominant);
   border-top: 1px solid var(--color-border);
   overflow: hidden;
 }
@@ -20,9 +20,9 @@
 }
 
 .pill-btn {
-  background-color: #FFFFFF;
-  color: var(--color-dark-secondary);
-  border: 1px solid var(--color-border-dark);
+  background-color: var(--color-surface-light);
+  color: var(--color-text-light);
+  border: 1.5px solid var(--color-border-strong);
   padding: 9px 20px;
   border-radius: var(--radius-full);
   font-size: 0.9rem;
@@ -32,16 +32,23 @@
 }
 
 .pill-btn:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  transform: translateY(-1px);
+  background-color: var(--color-surface-secondary);
+  border-color: var(--color-surface-secondary);
+  color: var(--color-text-dark);
+  transform: translateY(-2px);
 }
 
 .pill-btn.active {
-  background: linear-gradient(135deg, var(--color-primary), #0052A3);
-  color: #FFFFFF;
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 14px rgba(0, 102, 204, 0.3);
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 14px var(--color-accent-glow);
+}
+
+.pill-btn.active:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: var(--color-text-light);
 }
 
 /* Contenedor del carrusel */
@@ -74,8 +81,9 @@
   grid-area: slide;
   width: 100%;
   max-width: 660px;
-  background-color: #FFFFFF;
-  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-secondary);
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-border-dark);
   border-radius: var(--radius-lg);
   padding: 42px;
   box-shadow: var(--shadow-card);
@@ -97,8 +105,8 @@
   opacity: 1;
   pointer-events: auto;
   transform: translateX(0) scale(1);
-  border-color: rgba(0, 102, 204, 0.28);
-  box-shadow: 0 20px 50px rgba(0, 35, 80, 0.12);
+  border-color: rgba(249, 115, 22, 0.45);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
   z-index: 4;
 }
 
@@ -113,8 +121,8 @@
 }
 
 .carousel-slide.is-prev:hover {
-  opacity: 0.62;
-  border-color: var(--color-primary);
+  opacity: 0.68;
+  border-color: var(--color-accent);
 }
 
 /* Tarjeta siguiente (derecha) */
@@ -128,8 +136,8 @@
 }
 
 .carousel-slide.is-next:hover {
-  opacity: 0.62;
-  border-color: var(--color-primary);
+  opacity: 0.68;
+  border-color: var(--color-accent);
 }
 
 /* Encabezado interno de cada tarjeta */
@@ -145,12 +153,12 @@
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #0077ED 0%, #004494 100%);
-  color: #FFFFFF;
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.28);
+  box-shadow: 0 8px 20px var(--color-accent-glow);
   flex-shrink: 0;
 }
 
@@ -167,8 +175,9 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-primary);
-  background-color: var(--color-primary-light);
+  color: var(--color-accent-on-dark);
+  background-color: var(--color-accent-soft);
+  border: 1px solid rgba(249, 115, 22, 0.3);
   padding: 5px 12px;
   border-radius: var(--radius-full);
 }
@@ -176,14 +185,14 @@
 .slide-counter {
   font-size: 0.84rem;
   font-weight: 800;
-  color: var(--color-gray);
+  color: var(--color-text-dark-muted);
   letter-spacing: 0.05em;
 }
 
 .slide-title {
   font-size: 2.2rem;
   font-weight: 900;
-  color: var(--color-dark);
+  color: var(--color-text-dark);
   line-height: 1.15;
   margin-bottom: 10px;
 }
@@ -191,20 +200,20 @@
 .slide-lead {
   font-size: 1.12rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-accent);
   margin-bottom: 14px;
 }
 
 .slide-desc {
   font-size: 1rem;
-  color: var(--color-gray);
+  color: var(--color-text-dark-muted);
   line-height: 1.65;
   margin-bottom: 24px;
 }
 
 .slide-points {
   margin-top: auto;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border-dark);
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -217,11 +226,11 @@
   gap: 10px;
   font-size: 0.94rem;
   font-weight: 600;
-  color: var(--color-dark-secondary);
+  color: var(--color-text-dark);
 }
 
 .slide-points li svg {
-  color: var(--color-success);
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 
@@ -234,10 +243,10 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #FFFFFF;
+  background-color: var(--color-surface-secondary);
   border: 1px solid var(--color-border-dark);
-  color: var(--color-dark);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: var(--color-text-dark);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -246,10 +255,10 @@
 }
 
 .carousel-nav-arrow:hover {
-  background-color: var(--color-primary);
-  color: #FFFFFF;
-  border-color: var(--color-primary);
-  transform: translateY(-50%) scale(1.08);
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
+  border-color: var(--color-accent);
+  transform: translateY(-50%) scale(1.06);
 }
 
 .carousel-nav-arrow.prev {
@@ -273,21 +282,22 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: #FFFFFF;
-  border: 1px solid var(--color-border-dark);
+  background-color: var(--color-surface-secondary);
+  border: 1px solid var(--color-surface-secondary);
   padding: 9px 18px;
   border-radius: var(--radius-full);
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--color-dark);
+  color: var(--color-text-dark);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .ctrl-btn:hover {
-  background-color: var(--color-primary);
-  color: #FFFFFF;
-  border-color: var(--color-primary);
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
 }
 
 .carousel-dots {
@@ -302,7 +312,7 @@
   border-radius: 50%;
   border: none;
   padding: 0;
-  background-color: var(--color-border-dark);
+  background-color: var(--color-border-strong);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -310,7 +320,7 @@
 .carousel-dots .dot.active {
   width: 26px;
   border-radius: var(--radius-full);
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
 }
 
 @media (max-width: 960px) {
@@ -332,6 +342,7 @@
   .carousel-slide.is-next {
     opacity: 0;
     pointer-events: none;
+    transform: translateX(0) scale(0.95);
   }
 }
 

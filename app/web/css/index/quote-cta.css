@@ -4,7 +4,7 @@
    ========================================================================== */
 
 .quote-cta-section {
-  background: linear-gradient(180deg, #F5F5F7 0%, #E7F0FA 100%);
+  background-color: var(--color-bg-dominant);
   border-top: 1px solid var(--color-border);
   position: relative;
   overflow: hidden;
@@ -13,11 +13,12 @@
 .quote-banner-card {
   max-width: 880px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #1D1D1F 0%, #26262B 100%);
-  color: #FFFFFF;
+  background-color: var(--color-surface-secondary);
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-border-dark);
   border-radius: var(--radius-lg);
   padding: 48px;
-  box-shadow: 0 22px 50px rgba(0, 20, 50, 0.14);
+  box-shadow: var(--shadow-card);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -35,7 +36,7 @@
   right: -15%;
   width: 380px;
   height: 380px;
-  background: radial-gradient(circle, rgba(0, 119, 237, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.2) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -53,9 +54,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(52, 199, 89, 0.16);
-  border: 1px solid rgba(52, 199, 89, 0.4);
-  color: #6CE88D;
+  background: var(--color-accent-soft);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  color: var(--color-accent-on-dark);
   font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -68,49 +69,19 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #34C759;
-  box-shadow: 0 0 8px #34C759;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
 }
 
 .quote-banner-title {
   font-size: 2rem;
   font-weight: 900;
   line-height: 1.2;
-  color: #FFFFFF;
+  color: var(--color-text-dark);
 }
 
 .quote-banner-title span {
-  color: #64D2FF;
-}
-
-/* Nota concisa de precio relativo */
-.quote-disclaimer {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius-md);
-  padding: 12px 18px;
-  max-width: 680px;
-  text-align: left;
-}
-
-.quote-disclaimer svg {
-  color: #FFD60A;
-  flex-shrink: 0;
-}
-
-.quote-disclaimer p {
-  font-size: 0.88rem;
-  line-height: 1.45;
-  color: #E5E5EA;
-}
-
-.quote-disclaimer strong {
-  color: #FFFFFF;
+  color: var(--color-accent);
 }
 
 /* Acción principal */
@@ -125,22 +96,24 @@
 }
 
 .btn-quote-start {
-  background: linear-gradient(135deg, #0077ED 0%, #00A8E8 100%);
-  color: #FFFFFF;
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
   padding: 15px 34px;
   font-size: 1.02rem;
-  box-shadow: 0 8px 24px rgba(0, 119, 237, 0.4);
+  box-shadow: 0 8px 24px var(--color-accent-glow);
 }
 
 .btn-quote-start:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-text-light);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 168, 232, 0.5);
+  box-shadow: 0 12px 30px rgba(249, 115, 22, 0.45);
 }
 
 .quote-no-commitment {
   font-size: 0.84rem;
   font-weight: 600;
-  color: #AEAEB2;
+  color: var(--color-text-dark-muted);
 }
 
 /* Responsividad */
@@ -160,10 +133,6 @@
   }
   .quote-banner-title {
     font-size: 1.45rem;
-  }
-  .quote-disclaimer {
-    align-items: flex-start;
-    padding: 12px 14px;
   }
   .btn-quote-start {
     width: 100%;

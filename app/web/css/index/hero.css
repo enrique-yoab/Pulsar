@@ -18,32 +18,28 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background: linear-gradient(180deg, #EEF4FA 0%, #F5F5F7 100%);
+  background-color: var(--color-bg-dominant);
 }
 
 .bg-grid-overlay {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(0, 102, 204, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 102, 204, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(30, 41, 59, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, black 45%, transparent 85%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 85%);
 }
 
 .bg-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(75px);
-  opacity: 0.55;
-  animation: orbFloat 16s ease-in-out infinite alternate;
+  display: none;
 }
 
 .orb-1 {
   width: 480px;
   height: 480px;
-  background: radial-gradient(circle, rgba(0, 102, 204, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.14) 0%, transparent 70%);
   top: -120px;
   left: -100px;
 }
@@ -51,7 +47,7 @@
 .orb-2 {
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle, rgba(0, 168, 232, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(30, 41, 59, 0.1) 0%, transparent 70%);
   bottom: -150px;
   right: -120px;
   animation-delay: -6s;
@@ -61,7 +57,7 @@
 .orb-3 {
   width: 360px;
   height: 360px;
-  background: radial-gradient(circle, rgba(0, 102, 204, 0.22) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
   top: 25%;
   left: 50%;
   transform: translateX(-50%);
@@ -107,11 +103,11 @@
   margin: 0 auto;
 }
 
-/* Emblema Central Animado (Sin artefactos de fondo blanco) */
+/* Emblema Central Animado de Pulsar Technologies */
 .hero-logo-showcase {
   position: relative;
-  width: 124px;
-  height: 124px;
+  width: 216px;
+  height: 216px;
   margin: 0 auto 28px auto;
   display: flex;
   align-items: center;
@@ -133,30 +129,37 @@
 
 .pulsar-rings .ring {
   position: absolute;
-  width: 104px;
-  height: 104px;
-  border-radius: 28px;
+  width: 196px;
+  height: 196px;
+  border-radius: 50%;
   background: transparent;
-  border: 2px solid rgba(0, 102, 204, 0.55);
+  border: 1.8px solid rgba(249, 115, 22, 0.55);
   opacity: 0;
-  animation: pulsarRipple 3.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation: pulsarRipple 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
 .pulsar-rings .ring-2 {
-  animation-delay: 1.2s;
+  animation-delay: 0.24s;
 }
 
 .pulsar-rings .ring-3 {
-  animation-delay: 2.4s;
+  display: none;
 }
 
 @keyframes pulsarRipple {
   0% {
-    transform: scale(0.92);
-    opacity: 0.7;
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.72;
+  }
+  38% {
+    transform: scale(1.42);
+    opacity: 0;
   }
   100% {
-    transform: scale(1.75);
+    transform: scale(1.42);
     opacity: 0;
   }
 }
@@ -164,71 +167,23 @@
 .hero-logo-emblem {
   position: relative;
   z-index: 2;
-  width: 104px;
-  height: 104px;
-  border-radius: 28px;
-  background: linear-gradient(135deg, #0077ED 0%, #004494 100%);
-  color: #FFFFFF;
+  width: 196px;
+  height: 196px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  box-shadow: 
-    0 16px 36px rgba(0, 102, 204, 0.36),
-    inset 0 2px 4px rgba(255, 255, 255, 0.3);
-  animation: emblemFloat 3.6s ease-in-out infinite;
-}
-
-@keyframes emblemFloat {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    box-shadow: 
-      0 16px 36px rgba(0, 102, 204, 0.34),
-      inset 0 2px 4px rgba(255, 255, 255, 0.3);
-  }
-  50% {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 
-      0 22px 44px rgba(0, 136, 255, 0.5),
-      0 0 20px rgba(0, 168, 232, 0.35),
-      inset 0 2px 5px rgba(255, 255, 255, 0.45);
-  }
-}
-
-.pulse-svg {
-  background: transparent !important;
   overflow: visible;
+  box-shadow: none;
 }
 
-.pulse-track {
-  fill: none !important;
-  background: transparent !important;
-}
-
-.pulse-path {
-  fill: none !important;
-  background: transparent !important;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: drawPulseClean 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes drawPulseClean {
-  0% {
-    stroke-dashoffset: 100;
-    opacity: 0.3;
-  }
-  15% {
-    opacity: 1;
-  }
-  50%, 70% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: -100;
-    opacity: 0.2;
-  }
+.pulsar-logo-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
 }
 
 /* Título Principal de la Empresa */
@@ -245,8 +200,8 @@
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -0.03em;
-  color: var(--color-dark);
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  color: var(--color-text-light);
+  text-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
 }
 
 .company-word-sub {
@@ -255,7 +210,8 @@
   letter-spacing: 0.32em;
   margin-top: 8px;
   padding-left: 0.32em;
-  background: linear-gradient(90deg, var(--color-primary) 0%, #00A8E8 50%, var(--color-primary) 100%);
+  color: var(--color-accent-text-light);
+  background: linear-gradient(90deg, var(--color-accent-text-light) 0%, #9A3412 50%, var(--color-accent-text-light) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -275,7 +231,7 @@
 .hero-tagline {
   font-size: 1.65rem;
   font-weight: 700;
-  color: var(--color-dark-secondary);
+  color: var(--color-text-light);
   margin-bottom: 12px;
   letter-spacing: -0.01em;
   animation: fadeUp 0.85s 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -284,7 +240,7 @@
 .hero-subtitle {
   font-size: 1.15rem;
   line-height: 1.6;
-  color: var(--color-gray);
+  color: var(--color-text-light-muted);
   max-width: 640px;
   margin: 0 auto 36px auto;
   animation: fadeUp 0.85s 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -326,10 +282,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: var(--color-surface-secondary);
+  border: 1px solid var(--color-border-dark);
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--shadow-card);
@@ -341,20 +295,20 @@
 }
 
 .stat-item:not(:last-child) {
-  border-right: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border-dark);
 }
 
 .stat-value {
   font-size: 1.85rem;
   font-weight: 900;
-  color: var(--color-primary);
+  color: var(--color-accent);
   line-height: 1.2;
 }
 
 .stat-label {
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--color-dark-secondary);
+  color: var(--color-text-dark);
   margin-top: 4px;
 }
 
@@ -368,6 +322,17 @@
 }
 
 @media (max-width: 768px) {
+  .hero-logo-showcase {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 22px;
+  }
+  .hero-logo-emblem,
+  .pulsar-rings .ring {
+    width: 164px;
+    height: 164px;
+    border-radius: 50%;
+  }
   .company-word-main {
     font-size: 2.9rem;
   }
@@ -405,14 +370,14 @@
 
 @media (max-width: 380px) {
   .hero-logo-showcase {
-    width: 104px;
-    height: 104px;
+    width: 156px;
+    height: 156px;
   }
   .hero-logo-emblem,
   .pulsar-rings .ring {
-    width: 88px;
-    height: 88px;
-    border-radius: 22px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
   }
   .company-word-main {
     font-size: 2rem;
@@ -426,7 +391,7 @@
   }
   .stat-item:not(:last-child) {
     border-right: none;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border-dark);
     padding-bottom: 10px;
   }
 }

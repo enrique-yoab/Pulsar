@@ -4,7 +4,7 @@
    ========================================================================== */
 
 .about-section {
-  background-color: #FFFFFF;
+  background-color: var(--color-bg-dominant);
   border-top: 1px solid var(--color-border);
   position: relative;
   overflow: hidden;
@@ -15,13 +15,13 @@
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 28px;
-  align-items: stretch;
+  align-items: center;
 }
 
 /* Tarjeta principal de historia e identidad */
 .about-story-card {
-  background: linear-gradient(145deg, #FFFFFF 0%, #F4F8FD 100%);
-  border: 1px solid rgba(0, 102, 204, 0.18);
+  background-color: var(--color-surface-light);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 44px;
   box-shadow: var(--shadow-card);
@@ -34,8 +34,29 @@
 }
 
 .about-story-card:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
+}
+
+.about-photo-frame {
+  width: 100%;
+  height: 210px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 22px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-subtle);
+}
+
+.about-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-story-card:hover .about-photo-frame img {
+  transform: scale(1.04);
 }
 
 .about-story-badge {
@@ -43,8 +64,9 @@
   align-items: center;
   gap: 8px;
   align-self: flex-start;
-  background-color: var(--color-primary-light);
-  color: var(--color-primary);
+  background-color: var(--color-accent-tint);
+  color: var(--color-accent-text-light);
+  border: 1px solid rgba(194, 65, 12, 0.25);
   font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -58,34 +80,34 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.2);
+  background-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.22);
 }
 
 .about-story-title {
   font-size: 2rem;
   font-weight: 900;
-  color: var(--color-dark);
+  color: var(--color-text-light);
   line-height: 1.2;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
 
 .about-story-title span {
-  color: var(--color-primary);
+  color: var(--color-accent-text-light);
 }
 
 .about-story-text {
   font-size: 1.04rem;
-  color: var(--color-gray);
+  color: var(--color-text-light-muted);
   line-height: 1.68;
   margin-bottom: 24px;
 }
 
 /* Cita destacada de los fundadores */
 .about-quote-box {
-  background-color: #FFFFFF;
-  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-bg-dominant);
+  border-left: 4px solid var(--color-accent);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   padding: 20px 24px;
   box-shadow: var(--shadow-subtle);
@@ -96,7 +118,7 @@
   font-size: 0.96rem;
   font-style: italic;
   font-weight: 600;
-  color: var(--color-dark-secondary);
+  color: var(--color-text-light);
   line-height: 1.55;
   margin-bottom: 8px;
 }
@@ -106,19 +128,20 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-primary);
+  color: var(--color-accent-text-light);
 }
 
 /* Tarjeta oscura interactiva: Ecosistema de 4 Especialidades */
 .about-ecosystem-card {
-  background: linear-gradient(145deg, #1D1D1F 0%, #28282C 100%);
-  color: #FFFFFF;
+  background-color: var(--color-surface-secondary);
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-border-dark);
   border-radius: var(--radius-lg);
-  padding: 38px 34px;
+  padding: 32px 28px;
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
   overflow: hidden;
 }
@@ -130,7 +153,7 @@
   right: -30%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(0, 136, 255, 0.28) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.2) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -146,7 +169,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #64D2FF;
+  color: var(--color-accent);
   display: block;
   margin-bottom: 6px;
 }
@@ -154,6 +177,7 @@
 .eco-title {
   font-size: 1.45rem;
   font-weight: 800;
+  color: var(--color-text-dark);
   line-height: 1.25;
 }
 
@@ -167,8 +191,8 @@
 }
 
 .eco-item {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border-dark);
   border-radius: var(--radius-md);
   padding: 18px 16px;
   display: flex;
@@ -178,17 +202,16 @@
 }
 
 .eco-item:hover {
-  background: rgba(0, 102, 204, 0.25);
-  border-color: #64D2FF;
-  transform: translateY(-3px);
+  background: rgba(249, 115, 22, 0.12);
+  border-color: var(--color-accent);
 }
 
 .eco-icon {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(0, 168, 232, 0.16);
-  color: #64D2FF;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-on-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,20 +219,20 @@
 }
 
 .eco-item:hover .eco-icon {
-  background: var(--color-primary);
-  color: #FFFFFF;
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
 }
 
 .eco-name {
   font-size: 0.95rem;
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--color-text-dark);
   line-height: 1.2;
 }
 
 .eco-sub {
   font-size: 0.78rem;
-  color: #AEAEB2;
+  color: var(--color-text-dark-muted);
   line-height: 1.35;
 }
 

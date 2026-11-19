@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cotizador gratuito de Pulsar Technologies - Selecciona de forma rápida lo que necesita tu negocio.">
+  <meta name="theme-color" content="#0066CC">
+  <title>Cotización | Pulsar Technologies</title>
+  <link rel="icon" type="image/x-icon" href="img/logo/logo.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="img/logo/logo.ico">
+
+  <!-- Tipografía Lato (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo modulares (Globales y Cotización) -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/cotizacion/cotizacion.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <!-- Scripts modulares -->
+  <script src="js/main.js" defer></script>
+  <script src="js/cotizacion/cotizacion.js" defer></script>
+</head>
+<body>
+
+  <!-- ======================================================================
+       HEADER / BARRA DE NAVEGACIÓN
+       ====================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Pulsar Technologies - Volver al Inicio">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">PULSAR</span>
+          <span class="brand-subtitle">TECHNOLOGIES</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html#nosotros" class="nav-link">Nosotros</a>
+        <a href="index.html#filosofia" class="nav-link">Valores</a>
+        <a href="index.html#servicios" class="nav-link">Servicios</a>
+        <a href="cotizacion.html" class="nav-link">Cotizar</a>
+        <a href="index.html#portal" class="nav-link">Portal</a>
+        <a href="index.html#portal" class="btn btn-primary nav-login-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Iniciar Sesión</span>
+        </a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MAIN / COTIZADOR DE 4 PASOS
+       ====================================================================== -->
+  <main class="quote-page-main">
+    <div class="container">
+      <div class="quote-hero-header">
+        <div class="quote-hero-badge">
+          <span>Cotización Gratuita · $0 Costo</span>
+        </div>
+        <h1 class="quote-hero-title">
+          Cotizador <span>Rápido</span>
+        </h1>
+        <p class="quote-hero-subtitle">
+          Define tus necesidades, elige el nivel de equipos que deseas cotizar, selecciona tus dispositivos y envía tu solicitud.
+        </p>
+      </div>
+
+      <!-- Indicador de progreso (Paso 1 -> Paso 2 -> Paso 3 -> Paso 4) -->
+      <nav class="quote-stepper quote-stepper-4" aria-label="Progreso de cotización">
+        <button type="button" class="stepper-item is-active" id="stepperStep1" data-step="1">
+          <span class="stepper-number">1</span>
+          <div class="stepper-info">
+            <span class="stepper-label">Paso 1</span>
+            <span class="stepper-name">Necesidades</span>
+          </div>
+        </button>
+        <span class="stepper-connector" aria-hidden="true"></span>
+        <button type="button" class="stepper-item" id="stepperStep2" data-step="2" disabled>
+          <span class="stepper-number">2</span>
+          <div class="stepper-info">
+            <span class="stepper-label">Paso 2</span>
+            <span class="stepper-name">Niveles</span>
+          </div>
+        </button>
+        <span class="stepper-connector" aria-hidden="true"></span>
+        <button type="button" class="stepper-item" id="stepperStep3" data-step="3" disabled>
+          <span class="stepper-number">3</span>
+          <div class="stepper-info">
+            <span class="stepper-label">Paso 3</span>
+            <span class="stepper-name">Dispositivos</span>
+          </div>
+        </button>
+        <span class="stepper-connector" aria-hidden="true"></span>
+        <button type="button" class="stepper-item" id="stepperStep4" data-step="4" disabled>
+          <span class="stepper-number">4</span>
+          <div class="stepper-info">
+            <span class="stepper-label">Paso 4</span>
+            <span class="stepper-name">Enviar</span>
+          </div>
+        </button>
+      </nav>
+
+      <!-- ==================================================================
+           PANEL PASO 1: NECESIDADES
+           ================================================================== -->
+      <section class="quote-step-card" id="quoteStep1Panel">
+        <div class="step-header">
+          <span class="step-kicker">Paso 1 de 4</span>
+          <h2 class="step-title">¿Qué necesita tu negocio?</h2>
+          <p class="step-desc">
+            Marca si solo deseas proteger tu red o internet, y si deseas incluir cámaras o página web.
+          </p>
+        </div>
+
+        <form id="quoteStep1Form">
+          <div class="quick-options-grid">
+            <!-- Opción 1: Proteger red o internet -->
+            <label class="quick-option-card is-selected">
+              <input type="checkbox" class="quick-option-input" name="areas" value="red" checked>
+              <div class="quick-option-top">
+                <div class="quick-option-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <span class="quick-option-check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+              </div>
+              <span class="quick-option-tag">Mínimo Red / Internet</span>
+              <h3 class="quick-option-title">Proteger Red o Internet</h3>
+              <p class="quick-option-desc">
+                Asegura tu conexión actual contra fallas o accesos externos.
+              </p>
+            </label>
+
+            <!-- Opción 2: Cámaras -->
+            <label class="quick-option-card">
+              <input type="checkbox" class="quick-option-input" name="areas" value="camaras">
+              <div class="quick-option-top">
+                <div class="quick-option-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                  </svg>
+                </div>
+                <span class="quick-option-check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+              </div>
+              <span class="quick-option-tag">Opcional</span>
+              <h3 class="quick-option-title">Cámaras de Seguridad</h3>
+              <p class="quick-option-desc">
+                Sistema de videovigilancia CCTV para monitorear tu negocio.
+              </p>
+            </label>
+
+            <!-- Opción 3: Página Web -->
+            <label class="quick-option-card">
+              <input type="checkbox" class="quick-option-input" name="areas" value="web">
+              <div class="quick-option-top">
+                <div class="quick-option-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <span class="quick-option-check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+              </div>
+              <span class="quick-option-tag">Opcional</span>
+              <h3 class="quick-option-title">Página Web</h3>
+              <p class="quick-option-desc">
+                Sitio web corporativo o plataforma digital para tu empresa.
+              </p>
+            </label>
+          </div>
+
+          <div class="selection-status-bar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span id="selectionStatusText">Tu selección: <strong>Solo proteger tu red o internet</strong>.</span>
+          </div>
+
+          <div class="step-feedback" id="step1Feedback" role="alert"></div>
+
+          <div class="step-actions">
+            <a href="index.html" class="btn btn-secondary">Volver al Inicio</a>
+            <button type="submit" class="btn btn-primary" id="step1ContinueBtn">
+              <span>Continuar al Paso 2</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ==================================================================
+           PANEL PASO 2: BOTONES DE NIVEL / FILTROS PARA PASO 3
+           ================================================================== -->
+      <section class="quote-step-card" id="quoteStep2Panel" hidden>
+        <div class="step-header">
+          <span class="step-kicker">Paso 2 de 4</span>
+          <h2 class="step-title">¿Qué nivel de equipos deseas cotizar?</h2>
+          <p class="step-desc" id="step2Subtitle">
+            Elige con botones qué equipos incluir y en qué gama quieres cotizarlos para filtrarlos en el siguiente paso.
+          </p>
+        </div>
+
+        <form id="quoteStep2Form">
+          <!-- ============================================================
+               BLOQUE A: RED / SEGURIDAD / CÁMARAS
+               ============================================================ -->
+          <div id="step2NetworkBlock">
+            <!-- 1. Router -->
+            <div class="config-section">
+              <div class="config-section-head">
+                <span class="config-step-num" id="routerStepNum">1</span>
+                <div>
+                  <h3 class="config-section-title">¿Qué tipo de Router quieres cotizar?</h3>
+                  <p class="config-section-hint">Base principal para proteger y administrar tu conexión a internet.</p>
+                </div>
+              </div>
+
+              <div class="tier-buttons-grid">
+                <label class="tier-btn">
+                  <input type="radio" class="tier-input" name="routerTier" value="basico">
+                  <span class="tier-btn-name">Básico</span>
+                  <span class="tier-btn-sub">Hasta 4 puertos</span>
+                </label>
+                <label class="tier-btn">
+                  <input type="radio" class="tier-input" name="routerTier" value="regular">
+                  <span class="tier-btn-name">Regular</span>
+                  <span class="tier-btn-sub">5–7 puertos</span>
+                </label>
+                <label class="tier-btn is-selected">
+                  <input type="radio" class="tier-input" name="routerTier" value="tecnico" checked>
+                  <span class="tier-btn-name">Técnico</span>
+                  <span class="tier-btn-sub">8 puertos</span>
+                </label>
+                <label class="tier-btn">
+                  <input type="radio" class="tier-input" name="routerTier" value="profesional">
+                  <span class="tier-btn-name">Profesional</span>
+                  <span class="tier-btn-sub">16 puertos</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- 2. Firewall (Opcional Sí / No + Nivel) -->
+            <div class="config-section">
+              <div class="config-section-head">
+                <span class="config-step-num" id="firewallStepNum">2</span>
+                <div>
+                  <h3 class="config-section-title">¿Quieres incluir Firewall? <span class="optional-pill">Opcional</span></h3>
+                  <p class="config-section-hint">Equipo dediswitdo para inspección de tráfico, bloqueo de amenazas y VPN segura.</p>
+                </div>
+              </div>
+
+              <div class="yesno-grid">
+                <label class="yesno-btn is-selected">
+                  <input type="radio" class="yesno-input" name="firewallIncluded" value="no" checked>
+                  <span class="yesno-title">No, solo con el Router</span>
+                  <span class="yesno-sub">Sin firewall adicional</span>
+                </label>
+                <label class="yesno-btn">
+                  <input type="radio" class="yesno-input" name="firewallIncluded" value="si">
+                  <span class="yesno-title">Sí, incluir Firewall</span>
+                  <span class="yesno-sub">Elegir nivel a cotizar</span>
+                </label>
+              </div>
+
+              <div class="conditional-subbox" id="firewallTierBox" hidden>
+                <p class="subbox-label">Nivel de Firewall a cotizar:</p>
+                <div class="tier-buttons-grid">
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="firewallTier" value="basico">
+                    <span class="tier-btn-name">Básico</span>
+                    <span class="tier-btn-sub">Filtrado esencial</span>
+                  </label>
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="firewallTier" value="regular">
+                    <span class="tier-btn-name">Regular</span>
+                    <span class="tier-btn-sub">PyME estándar</span>
+                  </label>
+                  <label class="tier-btn is-selected">
+                    <input type="radio" class="tier-input" name="firewallTier" value="tecnico" checked>
+                    <span class="tier-btn-name">Técnico</span>
+                    <span class="tier-btn-sub">IPS/IDS + VPN</span>
+                  </label>
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="firewallTier" value="profesional">
+                    <span class="tier-btn-name">Profesional</span>
+                    <span class="tier-btn-sub">UTM empresarial</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Cámaras (Solo si eligió Cámaras en Paso 1) -->
+            <div class="config-section" id="step2CamerasBlock" hidden>
+              <div class="config-section-head">
+                <span class="config-step-num" id="camerasStepNum">3</span>
+                <div>
+                  <h3 class="config-section-title">Cámaras de Seguridad (Internas y Externas)</h3>
+                  <p class="config-section-hint">Indica cuántas cámaras internas y externas requieres y el nivel que deseas cotizar.</p>
+                </div>
+              </div>
+
+              <div class="counters-grid-2">
+                <div class="counter-card">
+                  <div class="counter-card-info">
+                    <span class="counter-tag">Interior / Domo</span>
+                    <h4 class="counter-title">Cámaras Internas</h4>
+                    <p class="counter-desc">Pasillos, oficinas, recepción o bodega.</p>
+                  </div>
+                  <div class="stepper-control">
+                    <button type="button" class="stepper-btn" data-target="camInternas" data-delta="-1" aria-label="Reducir cámaras internas">−</button>
+                    <input type="number" id="camInternas" class="stepper-value" min="0" max="64" value="2" inputmode="numeric">
+                    <button type="button" class="stepper-btn" data-target="camInternas" data-delta="1" aria-label="Aumentar cámaras internas">+</button>
+                  </div>
+                </div>
+
+                <div class="counter-card">
+                  <div class="counter-card-info">
+                    <span class="counter-tag">Exterior / Intemperie</span>
+                    <h4 class="counter-title">Cámaras Externas</h4>
+                    <p class="counter-desc">Accesos, fachadas y estacionamiento.</p>
+                  </div>
+                  <div class="stepper-control">
+                    <button type="button" class="stepper-btn" data-target="camExternas" data-delta="-1" aria-label="Reducir cámaras externas">−</button>
+                    <input type="number" id="camExternas" class="stepper-value" min="0" max="64" value="2" inputmode="numeric">
+                    <button type="button" class="stepper-btn" data-target="camExternas" data-delta="1" aria-label="Aumentar cámaras externas">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inline-port-pill" id="camerasPortSummary">
+                Total: <strong>4 cámaras</strong> (2 internas + 2 externas) · <strong>4 puertos</strong>
+              </div>
+
+              <div class="conditional-subbox">
+                <p class="subbox-label">Nivel de Cámaras a cotizar:</p>
+                <div class="tier-buttons-grid">
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="camerasTier" value="basico">
+                    <span class="tier-btn-name">Básico</span>
+                    <span class="tier-btn-sub">Full HD 2MP</span>
+                  </label>
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="camerasTier" value="regular">
+                    <span class="tier-btn-name">Regular</span>
+                    <span class="tier-btn-sub">4MP / Visión nocturna</span>
+                  </label>
+                  <label class="tier-btn is-selected">
+                    <input type="radio" class="tier-input" name="camerasTier" value="tecnico" checked>
+                    <span class="tier-btn-name">Técnico</span>
+                    <span class="tier-btn-sub">4MP ColorVu / IA</span>
+                  </label>
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="camerasTier" value="profesional">
+                    <span class="tier-btn-name">Profesional</span>
+                    <span class="tier-btn-sub">4K / Analítica avanzada</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Servidor (Solo si eligió Cámaras en Paso 1) -->
+            <div class="config-section" id="step2ServerBlock" hidden>
+              <div class="config-section-head">
+                <span class="config-step-num" id="serverStepNum">4</span>
+                <div>
+                  <h3 class="config-section-title">Tipo de Servidor para Grabación</h3>
+                  <p class="config-section-hint">Equipo encargado de grabar y respaldar tus cámaras (ocupa 1 puerto Ethernet).</p>
+                </div>
+              </div>
+
+              <div class="choice-cards-grid choice-grid-3">
+                <label class="choice-card is-selected">
+                  <input type="radio" class="choice-input" name="serverType" value="nvr" checked>
+                  <div class="choice-card-top">
+                    <span class="choice-badge is-recommended">CCTV</span>
+                    <span class="choice-radio-dot" aria-hidden="true"></span>
+                  </div>
+                  <h4 class="choice-title">NVR Dedicado</h4>
+                  <p class="choice-desc">Grabación continua 24/7 exclusiva para videovigilancia.</p>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" class="choice-input" name="serverType" value="torre">
+                  <div class="choice-card-top">
+                    <span class="choice-badge">PyME</span>
+                    <span class="choice-radio-dot" aria-hidden="true"></span>
+                  </div>
+                  <h4 class="choice-title">Servidor Torre</h4>
+                  <p class="choice-desc">VMS para cámaras + archivos compartidos o sistemas locales.</p>
+                </label>
+
+                <label class="choice-card">
+                  <input type="radio" class="choice-input" name="serverType" value="rack">
+                  <div class="choice-card-top">
+                    <span class="choice-badge">Empresarial</span>
+                    <span class="choice-radio-dot" aria-hidden="true"></span>
+                  </div>
+                  <h4 class="choice-title">Servidor Rack</h4>
+                  <p class="choice-desc">Alta capacidad, RAID redundante y virtualización.</p>
+                </label>
+              </div>
+
+              <div class="conditional-subbox">
+                <p class="subbox-label">Nivel de Servidor a cotizar:</p>
+                <div class="tier-buttons-grid">
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="serverTier" value="basico">
+                    <span class="tier-btn-name">Básico</span>
+                    <span class="tier-btn-sub">Almacenamiento base</span>
+                  </label>
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="serverTier" value="regular">
+                    <span class="tier-btn-name">Regular</span>
+                    <span class="tier-btn-sub">Respaldo medio</span>
+                  </label>
+                  <label class="tier-btn is-selected">
+                    <input type="radio" class="tier-input" name="serverTier" value="tecnico" checked>
+                    <span class="tier-btn-name">Técnico</span>
+                    <span class="tier-btn-sub">Mayor retención</span>
+                  </label>
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="serverTier" value="profesional">
+                    <span class="tier-btn-name">Profesional</span>
+                    <span class="tier-btn-sub">RAID / Alta disponibilidad</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Access Points (Sí / No + Cantidad + Nivel) -->
+            <div class="config-section">
+              <div class="config-section-head">
+                <span class="config-step-num" id="apStepNum">3</span>
+                <div>
+                  <h3 class="config-section-title">¿Quieres Access Points (Wi-Fi)? <span class="optional-pill">Opcional</span></h3>
+                  <p class="config-section-hint">Antenas Wi-Fi empresariales para dar cobertura estable a empleados y clientes (1 puerto c/u).</p>
+                </div>
+              </div>
+
+              <div class="yesno-grid">
+                <label class="yesno-btn is-selected">
+                  <input type="radio" class="yesno-input" name="apIncluded" value="no" checked>
+                  <span class="yesno-title">No necesito Access Points</span>
+                  <span class="yesno-sub">Sin cobertura Wi-Fi adicional</span>
+                </label>
+                <label class="yesno-btn">
+                  <input type="radio" class="yesno-input" name="apIncluded" value="si">
+                  <span class="yesno-title">Sí, incluir Access Points</span>
+                  <span class="yesno-sub">Elegir cantidad y nivel</span>
+                </label>
+              </div>
+
+              <div class="conditional-subbox" id="apConfigBox" hidden>
+                <div class="counter-card counter-card-wide">
+                  <div class="counter-card-info">
+                    <span class="counter-tag">Wi-Fi Empresarial</span>
+                    <h4 class="counter-title">Cantidad de Access Points</h4>
+                    <p class="counter-desc">Cada Access Point ocupará 1 puerto Ethernet.</p>
+                  </div>
+                  <div class="stepper-control">
+                    <button type="button" class="stepper-btn" data-target="apCount" data-delta="-1" aria-label="Reducir Access Points">−</button>
+                    <input type="number" id="apCount" class="stepper-value" min="1" max="32" value="1" inputmode="numeric">
+                    <button type="button" class="stepper-btn" data-target="apCount" data-delta="1" aria-label="Aumentar Access Points">+</button>
+                  </div>
+                </div>
+
+                <p class="subbox-label subbox-label-spaced">Nivel de Access Points a cotizar:</p>
+                <div class="tier-buttons-grid">
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="apTier" value="basico">
+                    <span class="tier-btn-name">Básico</span>
+                    <span class="tier-btn-sub">Cobertura esencial</span>
+                  </label>
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="apTier" value="regular">
+                    <span class="tier-btn-name">Regular</span>
+                    <span class="tier-btn-sub">Wi-Fi 6 estándar</span>
+                  </label>
+                  <label class="tier-btn is-selected">
+                    <input type="radio" class="tier-input" name="apTier" value="tecnico" checked>
+                    <span class="tier-btn-name">Técnico</span>
+                    <span class="tier-btn-sub">Wi-Fi 6 estable</span>
+                  </label>
+                  <label class="tier-btn">
+                    <input type="radio" class="tier-input" name="apTier" value="profesional">
+                    <span class="tier-btn-name">Profesional</span>
+                    <span class="tier-btn-sub">Alta densidad</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               BLOQUE B: PÁGINA WEB Y HOSTING (Solo si marcó Página Web)
+               ============================================================ -->
+          <div id="step2WebBlock" hidden>
+            <div class="config-section">
+              <div class="config-section-head">
+                <span class="config-step-num" id="webStepNum">1</span>
+                <div>
+                  <h3 class="config-section-title">Tipo de Página Web</h3>
+                  <p class="config-section-hint">Elige si necesitas una página presencial informativa o un desarrollo a la medida.</p>
+                </div>
+              </div>
+
+              <div class="yesno-grid">
+                <label class="yesno-btn is-selected">
+                  <input type="radio" class="yesno-input" name="webType" value="presencial" checked>
+                  <span class="yesno-title">Página Web Presencial</span>
+                  <span class="yesno-sub">Sitio informativo corporativo</span>
+                </label>
+                <label class="yesno-btn">
+                  <input type="radio" class="yesno-input" name="webType" value="medida">
+                  <span class="yesno-title">Desarrollo a la Medida</span>
+                  <span class="yesno-sub">Sistema, portal o funciones propias</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="config-section">
+              <div class="config-section-head">
+                <span class="config-step-num" id="hostingStepNum">2</span>
+                <div>
+                  <h3 class="config-section-title">¿Deseas incluir Hosting?</h3>
+                  <p class="config-section-hint">Indica si necesitas alojamiento web administrado o ya cuentas con proveedor.</p>
+                </div>
+              </div>
+
+              <div class="yesno-grid">
+                <label class="yesno-btn is-selected">
+                  <input type="radio" class="yesno-input" name="hostingIncluded" value="si" checked>
+                  <span class="yesno-title">Sí, incluir Hosting</span>
+                  <span class="yesno-sub">Dominio, SSL y alojamiento</span>
+                </label>
+                <label class="yesno-btn">
+                  <input type="radio" class="yesno-input" name="hostingIncluded" value="no">
+                  <span class="yesno-title">No, ya cuento con hosting</span>
+                  <span class="yesno-sub">Despliegue en tu servidor actual</span>
+                </label>
+              </div>
+
+              <div class="conditional-subbox" id="hostingTierBox">
+                <p class="subbox-label">Nivel de Hosting:</p>
+                <div class="yesno-grid">
+                  <label class="yesno-btn is-selected">
+                    <input type="radio" class="yesno-input" name="hostingTier" value="estandar" checked>
+                    <span class="yesno-title">Hosting Administrado Estándar</span>
+                    <span class="yesno-sub">Ideal para página presencial</span>
+                  </label>
+                  <label class="yesno-btn">
+                    <input type="radio" class="yesno-input" name="hostingTier" value="vps">
+                    <span class="yesno-title">Hosting VPS / Dedicado</span>
+                    <span class="yesno-sub">Ideal para desarrollo a la medida</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="selection-status-bar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span id="step2SummaryText">Configura tus niveles para filtrar dispositivos.</span>
+          </div>
+
+          <div class="step-feedback" id="step2Feedback" role="alert"></div>
+
+          <div class="step-actions">
+            <button type="button" class="btn btn-secondary" id="backToStep1Btn">
+              <span>← Regresar al Paso 1</span>
+            </button>
+            <button type="submit" class="btn btn-primary" id="step2ContinueBtn">
+              <span>Ver Dispositivos (Paso 3) →</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ==================================================================
+           PANEL PASO 3: CATÁLOGO FILTRADO Y ARMADO DE COTIZACIÓN
+           ================================================================== -->
+      <section class="quote-step-card" id="quoteStep3Panel" hidden>
+        <div class="step-header">
+          <span class="step-kicker">Paso 3 de 4</span>
+          <h2 class="step-title">Selecciona tus dispositivos y arma tu cotización</h2>
+          <p class="step-desc">
+            Mostramos los equipos filtrados con base en tus preferencias del Paso 2. Puedes comparar niveles o elegir el modelo que prefieras.
+          </p>
+        </div>
+
+        <div class="query-filter-banner" id="step3QueryBanner">
+          <div class="query-filter-title">Filtros activos de búsqueda:</div>
+          <div class="query-filter-chips" id="step3FilterChips"></div>
+        </div>
+
+        <form id="quoteStep3Form">
+          <div class="catalog-categories-wrap" id="step3CatalogGroups"></div>
+
+          <div class="step-feedback" id="step3Feedback" role="alert"></div>
+
+          <div class="step-actions">
+            <button type="button" class="btn btn-secondary" id="backToStep2Btn">
+              <span>← Ajustar Filtros (Paso 2)</span>
+            </button>
+            <button type="submit" class="btn btn-primary" id="step3ContinueBtn">
+              <span>Continuar para Enviar (Paso 4) →</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ==================================================================
+           PANEL PASO 4: FORMULARIO DE CONTACTO Y ENVÍO DE COTIZACIÓN
+           ================================================================== -->
+      <section class="quote-step-card" id="quoteStep4Panel" hidden>
+        <div class="step-header">
+          <span class="step-kicker">Paso 4 de 4</span>
+          <h2 class="step-title">Envía tu cotización y nos comunicamos contigo</h2>
+          <p class="step-desc">
+            Revisa tu selección final y déjanos tus datos para enviarte la propuesta formal sin costo.
+          </p>
+        </div>
+
+        <div id="step4FormWrap">
+          <div class="final-recap-card">
+            <div class="final-recap-head">
+              <h3>Resumen de tu cotización</h3>
+              <button type="button" class="recap-edit-link" id="editFromStep4Btn">Editar dispositivos</button>
+            </div>
+            <ul class="assembled-quote-list" id="step4FinalRecapList"></ul>
+            <div class="assembled-total-row">
+              <span>Total estimado verificado (MXN)</span>
+              <strong id="step4TotalAmount">$0.00 MXN</strong>
+            </div>
+          </div>
+
+          <form id="quoteStep4Form" novalidate>
+            <div class="contact-form-grid">
+              <div class="form-field">
+                <label for="clientName">Nombre completo *</label>
+                <input type="text" id="clientName" name="clientName" placeholder="Ej. Carlos Mendoza" required>
+              </div>
+
+              <div class="form-field">
+                <label for="clientCompany">Empresa o negocio</label>
+                <input type="text" id="clientCompany" name="clientCompany" placeholder="Ej. Comercializadora del Valle">
+              </div>
+
+              <div class="form-field">
+                <label for="clientEmail">Correo electrónico *</label>
+                <input type="email" id="clientEmail" name="clientEmail" placeholder="carlos@empresa.com" required>
+              </div>
+
+              <div class="form-field">
+                <label for="clientPhone">Teléfono o WhatsApp *</label>
+                <input type="tel" id="clientPhone" name="clientPhone" placeholder="55 1234 5678" required>
+              </div>
+
+              <div class="form-field form-field-full">
+                <label for="clientAddress">Dirección (Calle, Colonia, Ciudad)</label>
+                <input type="text" id="clientAddress" name="clientAddress" placeholder="Ej. Av. Insurgentes Sur 123, Col. Roma, CDMX">
+              </div>
+
+              <div class="form-field form-field-full">
+                <label for="clientNotes">Comentarios o detalles adicionales</label>
+                <textarea id="clientNotes" name="clientNotes" rows="3" placeholder="Horario preferido de contacto, requerimientos de instalación o dudas..."></textarea>
+              </div>
+            </div>
+
+            <div class="step-feedback" id="step4Feedback" role="alert"></div>
+
+            <div class="step-actions">
+              <button type="button" class="btn btn-secondary" id="backToStep3Btn">
+                <span>← Regresar al Paso 3</span>
+              </button>
+              <button type="submit" class="btn btn-primary" id="step4SubmitBtn">
+                <span>Enviar Cotización</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Confirmación de envío -->
+        <div class="quote-success-panel" id="step4SuccessPanel" hidden>
+          <div class="success-icon-circle" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <span class="success-folio-badge" id="successFolioBadge">Folio: PUL-000000</span>
+          <h3 class="success-title">¡Cotización registrada correctamente!</h3>
+          <p class="success-desc" id="successMessageText">
+            Un especialista de Pulsar Technologies revisará tu configuración y se pondrá en contacto contigo a la brevedad.
+          </p>
+
+          <div class="step-actions success-actions">
+            <a href="index.html" class="btn btn-secondary">Volver al Inicio</a>
+            <button type="button" class="btn btn-primary" id="startNewQuoteBtn">Hacer otra cotización</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nota de estimación relativa -->
+      <div class="quote-disclaimer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <p>
+          <strong>Estimación relativa:</strong> El costo calculado es aproximado, ya que los precios y modelos de los equipos cambian constantemente en el mercado.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER INSTITUCIONAL
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">PULSAR</span>
+              <span class="brand-subtitle">TECHNOLOGIES</span>
+            </div>
+          </div>
+          <p>
+            Ingeniería y tecnología para PyMEs mexicanas. Redes, videovigilancia, soporte técnico y plataformas web.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#servicios">Redes y Conectividad</a></li>
+            <li><a href="index.html#servicios">Seguridad y CCTV</a></li>
+            <li><a href="index.html#servicios">Soporte Técnico</a></li>
+            <li><a href="index.html#servicios">Desarrollo Web</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#nosotros">Quiénes Somos</a></li>
+            <li><a href="index.html#filosofia">Misión y Valores</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="cotizacion.html">Cotizar Gratis</a></li>
+            <li><a href="index.html#portal">Portal de Clientes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Sociedad S.A.S.</a></li>
+            <li><a href="#">Aviso de Privacidad</a></li>
+            <li><a href="#">Términos LFPC</a></li>
+            <li><a href="#">Derechos ARCO</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Pulsar Technologies S.A.S. Todos los derechos reservados.</p>
+        <div class="footer-legal-tags">
+          <span>Negocios Web</span>
+          <span class="dot-sep" aria-hidden="true">•</span>
+          <span>Facultad de Ingeniería, UNAM</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

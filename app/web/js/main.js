@@ -44,7 +44,13 @@ function initMobileMenu() {
 
   if (!menuToggle || !navMenu) return;
 
-  menuToggle.addEventListener('click', () => {
+  function closeMenu() {
+    navMenu.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
     menuToggle.setAttribute('aria-expanded', !isExpanded);
     navMenu.classList.toggle('active');
@@ -52,10 +58,26 @@ function initMobileMenu() {
 
   const navLinks = navMenu.querySelectorAll('.nav-link');
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Cerrar menú móvil si se pulsa el logo de la marca
+  const brandLink = document.querySelector('.site-header .brand');
+  if (brandLink) {
+    brandLink.addEventListener('click', closeMenu);
+  }
+
+  // Cerrar el menú desplegable al hacer clic fuera o presionar Escape
+  document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+      closeMenu();
+    }
   });
 }
 
@@ -82,7 +104,17 @@ function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#' || targetId === '') return;
+      if (targetId === '#' || targetId === '' || targetId === '#login') return;
+
+      // Si es el logotipo (#inicio), subir siempre hasta el tope absoluto (y = 0)
+      if (targetId === '#inicio') {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        return;
+      }
 
       const targetElement = document.querySelector(targetId);
       if (targetElement) {

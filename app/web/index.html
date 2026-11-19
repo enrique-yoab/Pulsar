@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Pulsar Technologies - Soluciones de ingeniería para PyMEs: Redes, CCTV, Soporte Técnico y Desarrollo Web.">
   <meta name="theme-color" content="#0066CC">
-  <title>Pulsar Technologies | Ingeniería y Soluciones TI</title>
+  <title>Pulsar Technologies</title>
+  <link rel="icon" type="image/x-icon" href="img/logo/logo.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="img/logo/logo.ico">
 
   <!-- Tipografía Lato (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +23,14 @@
   <link rel="stylesheet" href="css/index/services.css">
   <link rel="stylesheet" href="css/index/quote-cta.css">
   <link rel="stylesheet" href="css/index/portal.css">
+  <link rel="stylesheet" href="css/index/login.css">
   <link rel="stylesheet" href="css/footer.css">
   
   <!-- Scripts modulares (Global y específicos de Index) -->
   <script src="js/main.js" defer></script>
   <script src="js/index/hero-canvas.js" defer></script>
   <script src="js/index/carousel.js" defer></script>
+  <script src="js/index/login.js" defer></script>
 </head>
 <body>
 
@@ -56,25 +60,22 @@
         <a href="#servicios" class="nav-link">Servicios</a>
         <a href="#contacto" class="nav-link">Cotizar</a>
         <a href="#portal" class="nav-link">Portal</a>
-      </nav>
-
-      <!-- Acciones de Navegación -->
-      <div class="nav-actions">
-        <a href="#login" class="btn btn-primary nav-cta-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <a href="#login" class="btn btn-primary nav-login-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
           <span>Iniciar Sesión</span>
         </a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
   </header>
 
@@ -102,12 +103,7 @@
             <span class="ring ring-3"></span>
           </div>
           <div class="hero-logo-emblem">
-            <svg class="pulse-svg" width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Trazo base tenue permanente -->
-              <polyline class="pulse-track" pathLength="100" points="22 12 18 12 15 21 9 3 6 12 2 12" fill="none" stroke="rgba(255, 255, 255, 0.25)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></polyline>
-              <!-- Pulso luminoso animado sin filtros que generen fondo blanco -->
-              <polyline class="pulse-path" pathLength="100" points="22 12 18 12 15 21 9 3 6 12 2 12" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
-            </svg>
+            <canvas id="pulsarLogoCanvas" class="pulsar-logo-canvas" aria-hidden="true"></canvas>
           </div>
         </div>
 
@@ -170,12 +166,19 @@
           <!-- Tarjeta de Identidad e Historia -->
           <article class="about-story-card reveal-item">
             <div>
+              <div class="about-photo-frame">
+                <img
+                  src="img/equipo-pulsar.jpg"
+                  alt="Equipo de ingenieros de Pulsar Technologies colaborando en oficina"
+                  loading="lazy"
+                >
+              </div>
               <div class="about-story-badge">
                 <span class="badge-pulse-dot"></span>
                 <span>ADN Pulsar</span>
               </div>
               <h3 class="about-story-title">
-                Tu Departamento Externo de <span>Ingeniería de Software</span>
+                Tu Departamento de <span>Ingeniería de Software</span>
               </h3>
               <p class="about-story-text">
                 <strong>Pulsar Technologies</strong> es una empresa mexicana de base tecnológica creada para brindar estabilidad, seguridad y continuidad operativa a micro, pequeñas y medianas empresas. Integramos hardware y software bajo estándares internacionales sin sobrecostos ni tecnicismos confusos.
@@ -590,154 +593,194 @@
         <div class="services-grid">
           <!-- Servicio 1: Infraestructura de Conectividad -->
           <article class="service-card reveal-item">
-            <div class="service-card-top">
-              <div class="service-icon-box">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                </svg>
-              </div>
+            <div class="service-media">
+              <img
+                src="img/servicio-redes.jpg"
+                alt="Rack de red profesional con cableado estructurado azul y switches empresariales"
+                loading="lazy"
+              >
               <span class="service-step-tag">01 · Conectividad</span>
             </div>
 
-            <h3 class="service-title">Redes y Cableado Estructurado</h3>
-            <p class="service-desc">
-              Construimos la base física de comunicación de tu empresa mediante canalización normativa y redes locales (LAN/WLAN) de alta disponibilidad, enrutamiento y conmutación.
-            </p>
+            <div class="service-body">
+              <div class="service-card-head">
+                <div class="service-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                </div>
+                <h3 class="service-title">Redes y Cableado Estructurado</h3>
+              </div>
 
-            <ul class="service-features">
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Cableado estructurado (Cat 5e en adelante)</span>
-              </li>
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Cobertura WiFi empresarial (access points)</span>
-              </li>
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Racks organizados, switches y segmentación VLAN</span>
-              </li>
-            </ul>
+              <p class="service-desc">
+                Construimos la base física de comunicación de tu empresa mediante canalización normativa y redes locales (LAN/WLAN) de alta disponibilidad, enrutamiento y conmutación.
+              </p>
 
-            <div class="service-guarantee">
-              <span class="guarantee-label">Garantía Operativa</span>
-              <span class="guarantee-value">Enlace estable y certificado</span>
+              <ul class="service-features">
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Cableado estructurado (Cat 5e en adelante)</span>
+                </li>
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Cobertura WiFi empresarial (access points)</span>
+                </li>
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Racks organizados, switches y segmentación VLAN</span>
+                </li>
+              </ul>
+
+              <div class="service-guarantee">
+                <span class="guarantee-label">Garantía Operativa</span>
+                <span class="guarantee-value">Enlace estable y certificado</span>
+              </div>
             </div>
           </article>
 
           <!-- Servicio 2: Seguridad Perimetral y Videovigilancia -->
           <article class="service-card reveal-item">
-            <div class="service-card-top">
-              <div class="service-icon-box">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                  <circle cx="12" cy="13" r="4"></circle>
-                </svg>
-              </div>
+            <div class="service-media">
+              <img
+                src="img/servicio-cctv.jpg"
+                alt="Cámara de videovigilancia IP tipo domo instalada en oficina corporativa moderna"
+                loading="lazy"
+              >
               <span class="service-step-tag">02 · Seguridad</span>
             </div>
 
-            <h3 class="service-title">Videovigilancia y CCTV</h3>
-            <p class="service-desc">
-              Protegemos tus instalaciones con sistemas de videovigilancia IP y análoga en alta definición, almacenamiento local cifrado y visualización remota en tiempo real.
-            </p>
+            <div class="service-body">
+              <div class="service-card-head">
+                <div class="service-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                  </svg>
+                </div>
+                <h3 class="service-title">Videovigilancia y CCTV</h3>
+              </div>
 
-            <ul class="service-features">
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Cámaras IP/HD con visión nocturna e intemperie</span>
-              </li>
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Grabadores NVR/DVR con resguardo local seguro</span>
-              </li>
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Acceso remoto cifrado desde dispositivos móviles</span>
-              </li>
-            </ul>
+              <p class="service-desc">
+                Protegemos tus instalaciones con sistemas de videovigilancia IP y análoga en alta definición, almacenamiento local cifrado y visualización remota en tiempo real.
+              </p>
 
-            <div class="service-guarantee">
-              <span class="guarantee-label">Garantía Operativa</span>
-              <span class="guarantee-value">Privacidad 100% local</span>
+              <ul class="service-features">
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Cámaras IP/HD con visión nocturna e intemperie</span>
+                </li>
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Grabadores NVR/DVR con resguardo local seguro</span>
+                </li>
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Acceso remoto cifrado desde dispositivos móviles</span>
+                </li>
+              </ul>
+
+              <div class="service-guarantee">
+                <span class="guarantee-label">Garantía Operativa</span>
+                <span class="guarantee-value">Privacidad 100% local</span>
+              </div>
             </div>
           </article>
 
           <!-- Servicio 3: Soporte Técnico y Continuidad -->
           <article class="service-card reveal-item">
-            <div class="service-card-top">
-              <div class="service-icon-box">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                </svg>
-              </div>
+            <div class="service-media">
+              <img
+                src="img/servicio-soporte.jpg"
+                alt="Especialista de soporte técnico asistiendo a cliente en oficina moderna"
+                loading="lazy"
+              >
               <span class="service-step-tag">03 · Continuidad</span>
             </div>
 
-            <h3 class="service-title">Soporte Técnico y Mantenimiento</h3>
-            <p class="service-desc">
-              Aseguramos que tus estaciones de trabajo, servidores y periféricos operen sin paros mediante mantenimiento preventivo, correctivo y mesa de ayuda directa.
-            </p>
+            <div class="service-body">
+              <div class="service-card-head">
+                <div class="service-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                  </svg>
+                </div>
+                <h3 class="service-title">Soporte Técnico y Mantenimiento</h3>
+              </div>
 
-            <ul class="service-features">
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Diagnóstico, limpieza física y optimización</span>
-              </li>
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Asistencia técnica remota y visitas en sitio</span>
-              </li>
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Seguimiento puntual de tickets e incidentes</span>
-              </li>
-            </ul>
+              <p class="service-desc">
+                Aseguramos que tus estaciones de trabajo, servidores y periféricos operen sin paros mediante mantenimiento preventivo, correctivo y mesa de ayuda directa.
+              </p>
 
-            <div class="service-guarantee">
-              <span class="guarantee-label">Garantía Operativa</span>
-              <span class="guarantee-value">Respuesta ágil ante fallas</span>
+              <ul class="service-features">
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Diagnóstico, limpieza física y optimización</span>
+                </li>
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Asistencia técnica remota y visitas en sitio</span>
+                </li>
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Seguimiento puntual de tickets e incidentes</span>
+                </li>
+              </ul>
+
+              <div class="service-guarantee">
+                <span class="guarantee-label">Garantía Operativa</span>
+                <span class="guarantee-value">Respuesta ágil ante fallas</span>
+              </div>
             </div>
           </article>
 
           <!-- Servicio 4: Desarrollo de Software y Plataformas Web -->
           <article class="service-card reveal-item">
-            <div class="service-card-top">
-              <div class="service-icon-box">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </div>
+            <div class="service-media">
+              <img
+                src="img/servicio-web.jpg"
+                alt="Escritorio moderno con laptop y pantalla mostrando plataforma web corporativa"
+                loading="lazy"
+              >
               <span class="service-step-tag">04 · Digitalización</span>
             </div>
 
-            <h3 class="service-title">Desarrollo Web y Sistemas</h3>
-            <p class="service-desc">
-              Modernizamos la presencia digital y el control administrativo de tu negocio con sitios corporativos responsivos, catálogos interactivos y sistemas de gestión.
-            </p>
+            <div class="service-body">
+              <div class="service-card-head">
+                <div class="service-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <h3 class="service-title">Desarrollo Web y Sistemas</h3>
+              </div>
 
-            <ul class="service-features">
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Portales web rápidos, seguros y adaptables</span>
-              </li>
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Catálogos digitales y cotizadores en línea</span>
-              </li>
-              <li class="service-feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Plataformas de gestión en Python y FastAPI</span>
-              </li>
-            </ul>
+              <p class="service-desc">
+                Modernizamos la presencia digital y el control administrativo de tu negocio con sitios corporativos responsivos, catálogos interactivos y sistemas de gestión.
+              </p>
 
-            <div class="service-guarantee">
-              <span class="guarantee-label">Garantía Operativa</span>
-              <span class="guarantee-value">Carga ligera y alta disponibilidad</span>
+              <ul class="service-features">
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Portales web rápidos, seguros y adaptables</span>
+                </li>
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Catálogos digitales y cotizadores en línea</span>
+                </li>
+                <li class="service-feature-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Plataformas de gestión en Python y FastAPI</span>
+                </li>
+              </ul>
+
+              <div class="service-guarantee">
+                <span class="guarantee-label">Garantía Operativa</span>
+                <span class="guarantee-value">Carga ligera y alta disponibilidad</span>
+              </div>
             </div>
           </article>
         </div>
@@ -761,15 +804,15 @@
           <div class="quote-banner-top">
             <div class="quote-zero-badge">
               <span class="zero-dot" aria-hidden="true"></span>
-              <span>$0 Costo · Sin Compromiso</span>
+              <span>No pierdas tu tiempo</span>
             </div>
             <h3 class="quote-banner-title">
-              Calcula tu Presupuesto <span>Estimado</span>
+              Estima tu <span>Proyecto Ahora</span>
             </h3>
           </div>
 
           <div class="quote-cta-actions">
-            <a href="cotizador.html" class="btn btn-quote-start">
+            <a href="cotizacion.html" class="btn btn-quote-start">
               <span>Cotizar Gratis</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -777,17 +820,6 @@
               </svg>
             </a>
             <span class="quote-no-commitment">Sin costo y sin compromiso</span>
-          </div>
-
-          <div class="quote-disclaimer">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="8" x2="12" y2="12"></line>
-              <line x1="12" y1="16" x2="12.01" y2="16"></line>
-            </svg>
-            <p>
-              <strong>Estimación relativa:</strong> El costo calculado es aproximado, ya que los precios y modelos de los equipos cambian constantemente en el mercado.
-            </p>
           </div>
         </div>
       </div>
@@ -947,6 +979,99 @@
       </div>
     </div>
   </footer>
+
+  <!-- ======================================================================
+       VENTANA FLOTANTE: INICIO DE SESIÓN DE CLIENTES
+       ====================================================================== -->
+  <dialog class="login-dialog" id="loginModal" aria-labelledby="loginModalTitle">
+    <div class="login-modal-content">
+      <button type="button" class="login-close-btn" id="closeLoginModal" aria-label="Cerrar ventana">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="login-header">
+        <div class="login-emblem" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <h2 class="login-title" id="loginModalTitle">Acceso al Portal</h2>
+        <p class="login-subtitle">
+          Ingresa el usuario y contraseña asignados a tu empresa.
+        </p>
+      </div>
+
+      <form class="login-form" id="loginForm" novalidate>
+        <div class="login-feedback" id="loginFeedback" role="alert"></div>
+
+        <div class="login-field">
+          <label for="loginUsername" class="login-label">Usuario</label>
+          <div class="login-input-wrap">
+            <span class="login-input-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <input
+              type="text"
+              id="loginUsername"
+              name="username"
+              class="login-input"
+              placeholder="Ej. cliente.pulsar"
+              autocomplete="username"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="login-field">
+          <label for="loginPassword" class="login-label">Contraseña</label>
+          <div class="login-input-wrap">
+            <span class="login-input-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              class="login-input"
+              placeholder="••••••••"
+              autocomplete="current-password"
+              required
+            >
+            <button
+              type="button"
+              class="toggle-password-btn"
+              id="togglePasswordBtn"
+              aria-label="Mostrar contraseña"
+              aria-pressed="false"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary login-submit-btn">
+          Ingresar al Portal
+        </button>
+      </form>
+
+      <p class="login-footer-note">
+        ¿No recuerdas tus credenciales? Contacta directamente a tu ingeniero asignado de Pulsar.
+      </p>
+    </div>
+  </dialog>
 
 </body>
 </html>
